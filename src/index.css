@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ─── */
+:root {
+  --bg: #12100E;
+  --bg-elevated: #1A1714;
+  --gold: #E8B923;
+  --gold-dim: rgba(232, 185, 35, 0.15);
+  --gold-muted: rgba(232, 185, 35, 0.4);
+  --cream: #FBE9A8;
+  --body: #EAE3D5;
+  --body-80: rgba(234, 227, 213, 0.8);
+  --body-75: rgba(234, 227, 213, 0.75);
+  --body-50: rgba(234, 227, 213, 0.5);
+  --body-30: rgba(234, 227, 213, 0.3);
+
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Archivo', 'Helvetica Neue', sans-serif;
+  --font-mono: ui-monospace, 'Liberation Mono', 'Menlo', monospace;
+}
+
+/* ─── Base ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--body-80);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dim);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-muted);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-dim) var(--bg);
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(232, 185, 35, 0.25);
+  color: var(--cream);
+}
+
+/* ─── Typography ─── */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-300 {
+  font-weight: 300;
+}
+
+.font-400 {
+  font-weight: 400;
+}
+
+.font-500 {
+  font-weight: 500;
+}
+
+/* ─── Animations ─── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Tabular numbers for prices ─── */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* ─── Gold divider ─── */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--gold-dim) 20%,
+    rgba(232, 185, 35, 0.3) 50%,
+    var(--gold-dim) 80%,
+    transparent 100%
+  );
+}
+
+.gold-divider-strong {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(232, 185, 35, 0.3) 15%,
+    var(--gold) 50%,
+    rgba(232, 185, 35, 0.3) 85%,
+    transparent 100%
+  );
+}

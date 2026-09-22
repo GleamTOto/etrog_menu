@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 68">
+  <circle cx="30" cy="29" r="25" fill="#EFC12B"/>
+  <circle cx="30" cy="29" r="19" stroke="#14110D" stroke-width="1.2" opacity="0.28"/>
+  <line x1="30" y1="29" x2="30" y2="10" stroke="#14110D" stroke-width="0.9" opacity="0.3"/>
+  <line x1="30" y1="29" x2="46.5" y2="19.5" stroke="#14110D" stroke-width="0.9" opacity="0.3"/>
+  <line x1="30" y1="29" x2="46.5" y2="38.5" stroke="#14110D" stroke-width="0.9" opacity="0.3"/>
+  <line x1="30" y1="29" x2="30" y2="48" stroke="#14110D" stroke-width="0.9" opacity="0.3"/>
+  <line x1="30" y1="29" x2="13.5" y2="38.5" stroke="#14110D" stroke-width="0.9" opacity="0.3"/>
+  <line x1="30" y1="29" x2="13.5" y2="19.5" stroke="#14110D" stroke-width="0.9" opacity="0.3"/>
+  <circle cx="30" cy="29" r="2.8" fill="#14110D" opacity="0.25"/>
+  <path d="M30 54 C28.4 57.3 27.8 62 30 64.3 C32.2 62 31.6 57.3 30 54Z" fill="#EFC12B"/>
+</svg>
