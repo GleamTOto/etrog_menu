@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Intro } from './components/Intro'
 
 /* ─── Data ─── */
 
@@ -351,6 +352,7 @@ function App() {
 
   return (
     <div ref={containerRef} className="mx-auto max-w-2xl">
+      <Intro />
       {/* ─── Hero ─── */}
       <header className="flex flex-col items-center justify-center px-6 pt-20 pb-16 text-center sm:pt-28 sm:pb-20">
         <div className="animate-on-scroll">
