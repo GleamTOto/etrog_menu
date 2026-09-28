@@ -1,0 +1,570 @@
+{
+  "desayunos": {
+    "title": "BREAKFAST",
+    "guatemalteco": {
+      "subtitle": "Guatemalan",
+      "amanecer_etrog": {
+        "name": "Amanecer Etrog",
+        "description": "Eggs cooked to order, grilled steak skewer, cheese tortillas, standing beans (spicy), grilled plantain slice, cream and tomato salsa.",
+        "note": "Includes coffee with refill, seasonal juice and bread or tortilla"
+      },
+      "desayuno_guatemalteco": {
+        "name": "Guatemalan Breakfast",
+        "description": "Fried eggs to order, turned beans, Creole longaniza, ranchera sauce, fresh cheese, fried plantains, cream.",
+        "note": "Includes coffee with refill, juice and bread or tortilla"
+      },
+      "chilaquiles": {
+        "name": "Chilaquiles",
+        "description": "Chilaquiles with shredded chicken in red and green sauce, eggs to order and avocado slices.",
+        "note": "Includes coffee with refill, juice and bread or tortilla"
+      }
+    },
+    "motuleno": {
+      "subtitle": "Motuleño",
+      "huevos_motulenos": {
+        "name": "Huevos Motuleños",
+        "description": "Fried eggs on tortillas with beans, ranchera sauce, sweet corn, fresh cheese, cilantro and fried plantains with cream and coarse salt.",
+        "note": "Includes coffee with refill, juice and bread or tortilla"
+      },
+      "desayuno_americano": {
+        "name": "American Breakfast",
+        "description": "Eggs to order, pancakes, fried bacon and fresh fruit.",
+        "note": "Includes coffee with refill, juice and bread or tortilla"
+      }
+    },
+    "dulces": {
+      "subtitle": "Sweets",
+      "panqueques_campestres": {
+        "name": "Country Pancakes",
+        "description": "Three pancakes with seasonal fruit, butter and honey or maple syrup.",
+        "note": "Includes coffee with refill, juice and bread or tortilla"
+      },
+      "omelet": {
+        "name": "Omelette",
+        "description": "Freshly made omelette, filling of choice: ham and cheese, mushrooms or spinach.",
+        "note": "Includes coffee with refill, juice and bread or tortilla"
+      }
+    }
+  },
+  "tradicionales": {
+    "title": "TRADITIONAL",
+    "caldo_de_gallina": {
+      "name": "Hen Broth",
+      "description": "Red hen broth with perfectly cooked vegetables and regional herbs. Served with white rice, corn tamales and fresh avocado."
+    },
+    "caldo_de_chojin": {
+      "name": "Chojín Broth",
+      "description": "Charcoal-grilled chojín beef broth with vegetables and regional herbs. Served with white rice, corn tamales and fresh avocado."
+    }
+  },
+  "entradas": {
+    "title": "APPETIZERS",
+    "carpaccio_de_lomito": {
+      "name": "Tenderloin Carpaccio",
+      "description": "Thinly sliced tenderloin with citrus and house dressing."
+    },
+    "nachos_con_carne_y_queso": {
+      "name": "Nachos with Meat and Cheese",
+      "description": "Artisan tortilla chips with melted cheese and seasoned meat. For sharing."
+    },
+    "sopa_de_tortilla": {
+      "name": "Tortilla Soup",
+      "description": "Spiced broth with crispy tortilla."
+    },
+    "alitas": {
+      "name": "Wings in Buffalo or BBQ Sauce",
+      "description": "Wings glazed in Buffalo sauce (spicy) or BBQ (sweet and smoky)."
+    },
+    "mejillones_al_perol": {
+      "name": "Perol-Style Mussels",
+      "description": "Half-shell mussels sautéed in garlic butter with brunoise onion, marinated in white wine and finished with cream."
+    },
+    "ensaladas": {
+      "subtitle": "Salads",
+      "ensalada_cesar": {
+        "name": "Caesar Salad",
+        "description": "Fresh greens with Caesar dressing, grilled chicken fillet, tomato, black and green olives, onion, croutons and parmesan."
+      },
+      "ensalada_mixta_con_pollo": {
+        "name": "Mixed Salad with Chicken",
+        "description": "Lettuce with cucumber, tomato wedges, red onion, hard-boiled egg, bell pepper, fresh cheese and chicken. Tortilla chips and Thousand Island dressing."
+      },
+      "ensalada_campestre_de_pollo": {
+        "name": "Country Chicken Salad",
+        "description": "Lettuce with sweet corn, fresh cheese, tomato and onion, with grilled chicken and Italian dressing."
+      }
+    }
+  },
+  "frutos_del_mar": {
+    "title": "SEAFOOD",
+    "parrilla": {
+      "subtitle": "Grill",
+      "parrillada_mazatleca": {
+        "name": "Mazatlán-Style Grill",
+        "description": "Octopus tentacles, tilapia fillet and jumbo shrimp grilled to perfection."
+      }
+    },
+    "caldos": {
+      "subtitle": "Broths",
+      "caldo_de_mariscos": {
+        "name": "Seafood Broth",
+        "description": "Crab, half-shell mussels, shrimp, calamari rings and white clam, with fried morra."
+      }
+    },
+    "pescados": {
+      "subtitle": "Fish",
+      "filete_de_tilapia": {
+        "name": "Tilapia Fillet",
+        "description": "Grilled, breaded or garlic-style."
+      },
+      "tilapia_entera": {
+        "name": "Whole Tilapia",
+        "description": "Fried or garlic-style."
+      },
+      "mojarra_zarandeada": {
+        "name": "Zarandeada Snapper",
+        "description": "Tilapia marinated in chili adobo and grilled."
+      }
+    },
+    "camarones": {
+      "subtitle": "Shrimp",
+      "camarones_etrog": {
+        "name": "ETROG Shrimp",
+        "description": "House recipe: gratinéed termidor-style or seared on the grill."
+      },
+      "camaron_jumbo": {
+        "name": "Jumbo Shrimp",
+        "description": "Grilled, breaded or garlic-style."
+      },
+      "camarones_louisiana": {
+        "name": "Louisiana Shrimp",
+        "description": "Sautéed with Cajun spices, baby potatoes and sweet corn. Served with rice."
+      },
+      "camarones_tropicales_al_coco": {
+        "name": "Tropical Coconut Shrimp",
+        "description": "Breaded in batter and shredded coconut, with a spicy touch, Thousand Island dressing and side of choice."
+      }
+    },
+    "mariscos": {
+      "subtitle": "Shellfish",
+      "pulpo_al_ajillo": {
+        "name": "Garlic Octopus",
+        "description": "Sautéed octopus with garlic."
+      }
+    },
+    "crudos": {
+      "subtitle": "Raw",
+      "ceviche": {
+        "name": "Ceviche",
+        "description": "Marinated in citrus with the house touch. Shrimp or mixed (shrimp, octopus and calamari)."
+      }
+    }
+  },
+  "cortes_y_parrilla": {
+    "title": "CUTS & GRILL",
+    "cortes": {
+      "subtitle": "Cuts",
+      "puyazo_importado": {
+        "name": "Imported Puyazo (1/2 lb)",
+        "description": "Imported cut grilled to your liking, with sides."
+      },
+      "lomito_importado": {
+        "name": "Imported Tenderloin (1/2 lb)",
+        "description": "Imported cut grilled to your liking, with sides."
+      },
+      "churrasco_de_viuda_importada": {
+        "name": "Imported Widow's Churrasco",
+        "description": "Imported cut grilled to your liking, with sides."
+      },
+      "pollo_a_la_parrilla": {
+        "name": "Grilled Chicken (6 oz)",
+        "description": "Grilled chicken fillet."
+      }
+    },
+    "parrilladas": {
+      "subtitle": "Grill Platters",
+      "parrillada_para_2": {
+        "name": "Grill Platter for 2",
+        "description": "1/2 lb imported tenderloin, 1/2 lb imported puyazo, 6 oz chicken fillet and 2 longanizas."
+      },
+      "parrillada_para_4": {
+        "name": "Grill Platter for 4",
+        "description": "1 lb imported tenderloin, 1 lb imported puyazo, 12 oz chicken fillet and 4 longanizas."
+      }
+    },
+    "mar_y_tierra": {
+      "subtitle": "Sea & Land",
+      "mar_y_tierra": {
+        "name": "Sea & Land",
+        "description": "5 jumbo shrimp to your liking (garlic, grilled, breaded or termidor) with 8 oz cut of choice: puyazo or tenderloin."
+      }
+    }
+  },
+  "sandwicheria": {
+    "title": "SANDWICHES",
+    "hamburguesas": {
+      "subtitle": "Burgers",
+      "quesoburguera_clasica_etrog": {
+        "name": "ETROG Classic Cheeseburger",
+        "description": "Beef patty with melted American cheese and fresh vegetables. With french fries.",
+        "note": "Extra egg +Q5"
+      },
+      "hamburguesa_premium_etrog": {
+        "name": "ETROG Premium Burger",
+        "description": "Grilled beef with cheese, bacon, caramelized onion, tomato and lettuce, on artisan toasted bread with house butter."
+      }
+    },
+    "burritos": {
+      "subtitle": "Burritos",
+      "burrito_etrog_de_pollo_asado": {
+        "name": "ETROG Grilled Chicken Burrito",
+        "description": "Flour tortilla with grilled chicken, American cheese sauce, house beans, rice and avocado. With house sauce and ETROG Potatoes."
+      },
+      "burrito_etrog_de_lomito": {
+        "name": "ETROG Tenderloin Burrito",
+        "description": "Flour tortilla with sautéed tenderloin, vegetables, avocado and melted mozzarella. With house sauce."
+      }
+    },
+    "baguettes": {
+      "subtitle": "Baguettes",
+      "baguette_de_oregano_con_pollo": {
+        "name": "Oregano Baguette with Chicken",
+        "description": "Grilled chicken marinated in spiced oil and vegetables. With french fries."
+      },
+      "baguette_de_lomito": {
+        "name": "Tenderloin Baguette",
+        "description": "Sautéed tenderloin cubes with vegetables, avocado and melted mozzarella."
+      }
+    }
+  },
+  "pasta": {
+    "title": "PASTA",
+    "fettuccini_alfredo_con_camaron": {
+      "name": "Fettuccine Alfredo with Shrimp",
+      "description": "Butter and parmesan Alfredo sauce, nutmeg, sweet pepper and white onion, with grilled shrimp."
+    },
+    "fettuccini_alfredo_con_pollo": {
+      "name": "Fettuccine Alfredo with Grilled Chicken",
+      "description": "Creamy Alfredo sauce with parmesan, nutmeg, sweet pepper and white onion, with grilled chicken breast."
+    },
+    "fettuccini_alfredo_con_lomito": {
+      "name": "Fettuccine Alfredo with Tenderloin",
+      "description": "Sautéed tenderloin in creamy sauce with parmesan, sweet pepper and white onion."
+    }
+  },
+  "infantil": {
+    "title": "KIDS",
+    "deditos_crujientes_de_pollo": {
+      "name": "Crispy Chicken Tenders",
+      "description": "Breaded chicken strips with french fries."
+    }
+  },
+  "postres": {
+    "title": "DESSERTS",
+    "pie_de_queso": {
+      "name": "Cheesecake",
+      "description": "Crispy base and creamy filling."
+    },
+    "pie_de_chocobanano": {
+      "name": "Choco-Banana Pie",
+      "description": "Chocolate and banana, creamy texture."
+    },
+    "crepa_con_helado": {
+      "name": "Crepe with Ice Cream Scoop",
+      "description": "Warm crepes with a scoop of ice cream and topping of choice: strawberry, banana or Nutella."
+    },
+    "molletes_dulces": {
+      "name": "Sweet Molletes",
+      "description": "Bread with sweet and creamy filling."
+    },
+    "mole_de_platano": {
+      "name": "Plantain Mole",
+      "description": "Fried ripe plantain topped with house chocolate mole."
+    }
+  },
+  "guarniciones": {
+    "title": "SIDES",
+    "queso_fresco": {
+      "name": "Fresh cheese",
+      "description": ""
+    },
+    "crema": {
+      "name": "Cream",
+      "description": ""
+    },
+    "longaniza": {
+      "name": "Longaniza",
+      "description": ""
+    },
+    "frijoles_volteados": {
+      "name": "Turned beans",
+      "description": ""
+    },
+    "guacamol": {
+      "name": "Guacamole",
+      "description": ""
+    },
+    "papas_etrog": {
+      "name": "ETROG Potatoes",
+      "description": "Cubes sautéed in butter with paprika, parmesan and parsley."
+    },
+    "papas_fritas": {
+      "name": "French fries",
+      "description": ""
+    },
+    "huevos": {
+      "name": "Eggs to order",
+      "description": ""
+    },
+    "porcion_de_pan": {
+      "name": "Bread portion",
+      "description": "Plain, garlic or butter."
+    },
+    "porcion_de_tamalitos": {
+      "name": "Tamalito portion",
+      "description": ""
+    },
+    "porcion_de_arroz": {
+      "name": "Rice portion",
+      "description": ""
+    },
+    "porcion_de_tortillas": {
+      "name": "Tortilla portion",
+      "description": ""
+    }
+  },
+  "bebidas": {
+    "title": "DRINKS",
+    "calientes": {
+      "subtitle": "Hot",
+      "cafe_americano": {
+        "name": "American Coffee",
+        "description": "Coffee from the Antigua Guatemala region, dark roast with notes of chocolate, blackberry and maple honey."
+      },
+      "cafe_con_leche": {
+        "name": "Coffee with milk",
+        "description": ""
+      },
+      "capuchino": {
+        "name": "Cappuccino",
+        "description": ""
+      },
+      "latte": {
+        "name": "Latte",
+        "description": ""
+      },
+      "mocca": {
+        "name": "Mocha",
+        "description": ""
+      },
+      "chocolate_con_agua": {
+        "name": "Hot chocolate (water)",
+        "description": ""
+      },
+      "chocolate_con_leche": {
+        "name": "Hot chocolate (milk)",
+        "description": ""
+      },
+      "te_e_infusiones": {
+        "name": "Tea & Infusions",
+        "description": "Chamomile, green, apple-cinnamon, black, Lipton."
+      }
+    },
+    "moctels": {
+      "subtitle": "Mocktails",
+      "ginger_fresh": {
+        "name": "Ginger Fresh",
+        "description": "Ginger syrup, lime, pineapple juice and soda."
+      },
+      "atardecer": {
+        "name": "Sunset",
+        "description": "Cold brew, orange juice and ginger ale."
+      },
+      "pina_colada_virgen": {
+        "name": "Virgin Piña Colada",
+        "description": "Pineapple juice, coconut cream and a touch of milk."
+      },
+      "mojito_de_fresa": {
+        "name": "Strawberry Mojito",
+        "description": "Strawberry syrup, lime juice, mint and soda."
+      },
+      "sangria_tinta": {
+        "name": "Red Sangria",
+        "description": "Sour mix, soda and red wine."
+      }
+    },
+    "vinos_y_espumosos": {
+      "subtitle": "Wines & Sparkling",
+      "casillero_cabernet": {
+        "name": "Casillero del Diablo Cabernet Sauvignon",
+        "description": "Aromas of cherry and blackcurrant with a touch of vanilla. For grilled red meats and aged cheeses."
+      },
+      "casillero_merlot": {
+        "name": "Casillero del Diablo Merlot",
+        "description": "Cherry and sour cherry with toffee and vanilla notes. For soft cheeses, pastas, risottos and light meats."
+      },
+      "casillero_rose": {
+        "name": "Casillero del Diablo Rosé",
+        "description": "Balance between acidity, minerality and delicacy. For appetizers, cheeses and dried fruits."
+      },
+      "casillero_sauvignon": {
+        "name": "Casillero del Diablo Sauvignon Blanc",
+        "description": "Notes of lime, peach and herbal touches. For ceviches, fresh seafood and salads."
+      },
+      "moscato_fili": {
+        "name": "Moscato Fili",
+        "description": "Sweet and aromatic wine. For desserts, fresh fruits and blue cheeses."
+      },
+      "fragolino_bianco": {
+        "name": "Fragolino Bianco",
+        "description": "Wine-based semi-sparkling. For pastries and fruit salads."
+      },
+      "fragolino_rosso": {
+        "name": "Fragolino Rosso",
+        "description": "Wine-based semi-sparkling. For pastas and pizza."
+      },
+      "frontera_merlot": {
+        "name": "Frontera Merlot",
+        "description": "Cherry, peppers and a touch of cocoa. For pastas, cheeses, red meats and grilled chicken."
+      },
+      "frontera_carmenere": {
+        "name": "Frontera Carménère",
+        "description": "Smooth and balanced on the palate. For pastas, cheeses, grilled chicken and risottos."
+      },
+      "frontera_spritzer_rose": {
+        "name": "Frontera Spritzer Rosé Roses",
+        "description": "Rose petal aroma. As an aperitif or with desserts."
+      },
+      "frontera_spritzer_elderflower": {
+        "name": "Frontera Spritzer Elderflower",
+        "description": "White wine and elderflower. For light meals and appetizers."
+      }
+    },
+    "naturales": {
+      "subtitle": "Natural",
+      "jamaica": {
+        "name": "Hibiscus",
+        "description": "",
+        "note": "Pitcher Q100"
+      },
+      "guanabana": {
+        "name": "Soursop",
+        "description": "",
+        "note": "Pitcher Q100"
+      },
+      "horchata": {
+        "name": "Horchata",
+        "description": "",
+        "note": "Pitcher Q100"
+      },
+      "naranjada_con_agua": {
+        "name": "Orangeade with water",
+        "description": "",
+        "note": "Pitcher Q100"
+      },
+      "naranjada_con_soda": {
+        "name": "Orangeade with soda",
+        "description": "",
+        "note": "Pitcher Q110"
+      },
+      "naranjada_con_pepitoria": {
+        "name": "Orangeade with pepitoria",
+        "description": ""
+      },
+      "limonada_con_agua": {
+        "name": "Lemonade with water",
+        "description": "",
+        "note": "Pitcher Q100"
+      },
+      "limonada_con_soda": {
+        "name": "Lemonade with soda",
+        "description": "",
+        "note": "Pitcher Q110"
+      },
+      "jugo_de_naranja": {
+        "name": "Orange juice",
+        "description": ""
+      }
+    },
+    "frias": {
+      "subtitle": "Cold",
+      "coca_cola": {
+        "name": "Coca Cola",
+        "description": ""
+      },
+      "coca_cola_sabores": {
+        "name": "Coca Cola flavors",
+        "description": "Fanta orange, Sprite, Grapefruit, Coca Zero."
+      },
+      "pepsi": {
+        "name": "Pepsi",
+        "description": ""
+      },
+      "pepsi_sabores": {
+        "name": "Pepsi flavors",
+        "description": "Mineral, Grapette."
+      },
+      "agua_pura": {
+        "name": "Bottled water",
+        "description": ""
+      },
+      "cimarrona": {
+        "name": "Cimarrona",
+        "description": ""
+      },
+      "v8_preparado": {
+        "name": "Prepared V8",
+        "description": ""
+      },
+      "fruit_punch": {
+        "name": "Fruit Punch",
+        "description": "Pineapple, lime, orange juice and grenadine."
+      }
+    },
+    "frappe": {
+      "subtitle": "Frappés",
+      "frappuchino": {
+        "name": "Frappuccino",
+        "description": "Coffee, milk, vanilla ice cream, whipped cream and chocolate topping."
+      },
+      "frappe_oreo": {
+        "name": "Oreo Frappé",
+        "description": "Coffee, milk, Oreo cookie, chocolate syrup and whipped cream."
+      },
+      "frappe_de_caramelo_con_mani": {
+        "name": "Caramel Peanut Frappé",
+        "description": "Coffee, milk, caramel syrup, peanuts and whipped cream."
+      }
+    },
+    "licuados": {
+      "subtitle": "Smoothies",
+      "licuado_de_fruta": {
+        "name": "Fruit smoothie",
+        "description": "Banana, strawberry, papaya or watermelon.",
+        "note": "Whole milk or lactose-free"
+      },
+      "licuado_fresa_banano": {
+        "name": "Strawberry-Banana Smoothie",
+        "description": "",
+        "note": "Whole milk or lactose-free"
+      },
+      "tres_amores": {
+        "name": "Three Loves",
+        "description": "Blackberry, strawberry and orange juice.",
+        "note": "Whole milk or lactose-free"
+      },
+      "chocomilk": {
+        "name": "Chocomilk",
+        "description": "",
+        "note": "Whole milk or lactose-free"
+      }
+    }
+  },
+  "buffet": {
+    "title": "BUFFET",
+    "buffet_dominical": {
+      "name": "Sunday Buffet",
+      "description": "Every Sunday, 7:00 am to 11:00 am. Price and content to be confirmed via WhatsApp."
+    }
+  }
+}

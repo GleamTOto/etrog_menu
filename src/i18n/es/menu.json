@@ -1,0 +1,570 @@
+{
+  "desayunos": {
+    "title": "DESAYUNOS",
+    "guatemalteco": {
+      "subtitle": "Guatemalteco",
+      "amanecer_etrog": {
+        "name": "Amanecer Etrog",
+        "description": "Huevos al gusto, pincho de carne asada, tortillas con queso, frijoles parados (picantes), rodaja de plátano a la parrilla, crema y chirmol.",
+        "note": "Incluye café con refill, jugo de temporada y pan o tortilla"
+      },
+      "desayuno_guatemalteco": {
+        "name": "Desayuno Guatemalteco",
+        "description": "Huevos fritos al gusto, frijoles volteados, longaniza criolla, salsa ranchera, queso fresco, plátanos fritos, crema.",
+        "note": "Incluye café con refill, jugo y pan o tortilla"
+      },
+      "chilaquiles": {
+        "name": "Chilaquiles",
+        "description": "Chilaquiles con pollo desmenuzado en salsa roja y verde, huevos al gusto y lascas de aguacate.",
+        "note": "Incluye café con refill, jugo y pan o tortilla"
+      }
+    },
+    "motuleno": {
+      "subtitle": "Motuleño",
+      "huevos_motulenos": {
+        "name": "Huevos Motuleños",
+        "description": "Huevos fritos sobre tortillas con frijol, salsa ranchera, maíz dulce, queso fresco, cilantro y plátanos fritos con crema y sal gruesa.",
+        "note": "Incluye café con refill, jugo y pan o tortilla"
+      },
+      "desayuno_americano": {
+        "name": "Desayuno Americano",
+        "description": "Huevos al gusto, panqueques, tocino frito y fruta fresca.",
+        "note": "Incluye café con refill, jugo y pan o tortilla"
+      }
+    },
+    "dulces": {
+      "subtitle": "Dulces",
+      "panqueques_campestres": {
+        "name": "Panqueques Campestres",
+        "description": "Tres panqueques con fruta de temporada, mantequilla y miel de abeja o syrup de maple.",
+        "note": "Incluye café con refill, jugo y pan o tortilla"
+      },
+      "omelet": {
+        "name": "Omelet",
+        "description": "Omelet preparado al momento, relleno a elegir: jamón y queso, champiñones o espinaca.",
+        "note": "Incluye café con refill, jugo y pan o tortilla"
+      }
+    }
+  },
+  "tradicionales": {
+    "title": "TRADICIONALES",
+    "caldo_de_gallina": {
+      "name": "Caldo de Gallina",
+      "description": "Caldo rojo de gallina con vegetales al punto y hierbas de la región. Servido con arroz blanco, tamalitos de maíz y aguacate fresco."
+    },
+    "caldo_de_chojin": {
+      "name": "Caldo de Chojín",
+      "description": "Caldo de carne de res chojineada al carbón con vegetales y hierbas de la región. Servido con arroz blanco, tamalitos de maíz y aguacate fresco."
+    }
+  },
+  "entradas": {
+    "title": "ENTRADAS",
+    "carpaccio_de_lomito": {
+      "name": "Carpaccio de lomito",
+      "description": "Láminas de lomito con cítricos y aderezo de la casa."
+    },
+    "nachos_con_carne_y_queso": {
+      "name": "Nachos con carne y queso",
+      "description": "Totopos artesanales con queso fundido y carne sazonada. Para compartir."
+    },
+    "sopa_de_tortilla": {
+      "name": "Sopa de tortilla",
+      "description": "Caldo especiado con tortilla crujiente."
+    },
+    "alitas": {
+      "name": "Alitas en salsa Búfalo o BBQ",
+      "description": "Alitas glaseadas en salsa Búfalo (picante) o BBQ (dulce y ahumada)."
+    },
+    "mejillones_al_perol": {
+      "name": "Mejillones al Perol",
+      "description": "Mejillones media concha sofritos en mantequilla de ajo con cebolla en brunoise, marinados en vino blanco y terminados en crema."
+    },
+    "ensaladas": {
+      "subtitle": "Ensaladas",
+      "ensalada_cesar": {
+        "name": "Ensalada César",
+        "description": "Hojas frescas con aderezo César, filete de pollo a la plancha, tomate, aceitunas negras y verdes, cebolla, crutones y parmesano."
+      },
+      "ensalada_mixta_con_pollo": {
+        "name": "Ensalada Mixta con Pollo",
+        "description": "Lechugas con pepino, tomate en gajos, cebolla morada, huevo duro, chile pimiento, queso fresco y pollo. Chips de tortilla y aderezo Mil Islas."
+      },
+      "ensalada_campestre_de_pollo": {
+        "name": "Ensalada Campestre de Pollo",
+        "description": "Lechuga con maíz dulce, queso fresco, tomate y cebolla, con pollo a la plancha y aderezo italiano."
+      }
+    }
+  },
+  "frutos_del_mar": {
+    "title": "FRUTOS DEL MAR",
+    "parrilla": {
+      "subtitle": "Parrilla",
+      "parrillada_mazatleca": {
+        "name": "Parrillada Mazatleca",
+        "description": "Tentáculos de pulpo, filete de tilapia y camarones jumbo asados al punto."
+      }
+    },
+    "caldos": {
+      "subtitle": "Caldos",
+      "caldo_de_mariscos": {
+        "name": "Caldo de Mariscos",
+        "description": "Jaiba, mejillón en media concha, camarones, aros de calamar y almeja blanca, con morra frita."
+      }
+    },
+    "pescados": {
+      "subtitle": "Pescados",
+      "filete_de_tilapia": {
+        "name": "Filete de tilapia",
+        "description": "A la plancha, empanizado o al ajillo."
+      },
+      "tilapia_entera": {
+        "name": "Tilapia entera",
+        "description": "Frita o al ajillo."
+      },
+      "mojarra_zarandeada": {
+        "name": "Mojarra Zarandeada",
+        "description": "Tilapia marinada en adobo de chiles y asada a la parrilla."
+      }
+    },
+    "camarones": {
+      "subtitle": "Camarones",
+      "camarones_etrog": {
+        "name": "Camarones ETROG",
+        "description": "Receta de la casa: gratinados estilo termidor o sellados a la parrilla."
+      },
+      "camaron_jumbo": {
+        "name": "Camarón jumbo",
+        "description": "A la plancha, empanizado o al ajillo."
+      },
+      "camarones_louisiana": {
+        "name": "Camarones Louisiana",
+        "description": "Salteados con especias Cajun, papa baby y elote dulce. Servidos con arroz."
+      },
+      "camarones_tropicales_al_coco": {
+        "name": "Camarones Tropicales al Coco",
+        "description": "Empanizados en batter y coco rallado, con toque picante, aderezo Mil Islas y guarnición a elección."
+      }
+    },
+    "mariscos": {
+      "subtitle": "Mariscos",
+      "pulpo_al_ajillo": {
+        "name": "Pulpo al ajillo",
+        "description": "Pulpo salteado al ajillo."
+      }
+    },
+    "crudos": {
+      "subtitle": "Crudos",
+      "ceviche": {
+        "name": "Ceviche",
+        "description": "Marinado en cítricos con el toque de la casa. Camarón o mixto (camarón, pulpo y calamar)."
+      }
+    }
+  },
+  "cortes_y_parrilla": {
+    "title": "CORTES Y PARRILLA",
+    "cortes": {
+      "subtitle": "Cortes",
+      "puyazo_importado": {
+        "name": "Puyazo importado (1/2 lb)",
+        "description": "Corte importado asado a la parrilla al punto de su elección, con guarniciones."
+      },
+      "lomito_importado": {
+        "name": "Lomito importado (1/2 lb)",
+        "description": "Corte importado asado a la parrilla al punto de su elección, con guarniciones."
+      },
+      "churrasco_de_viuda_importada": {
+        "name": "Churrasco de Viuda Importada",
+        "description": "Corte importado asado a la parrilla al punto de su elección, con guarniciones."
+      },
+      "pollo_a_la_parrilla": {
+        "name": "Pollo a la parrilla (6 oz)",
+        "description": "Filete de pollo a la parrilla."
+      }
+    },
+    "parrilladas": {
+      "subtitle": "Parrilladas",
+      "parrillada_para_2": {
+        "name": "Parrillada para 2 personas",
+        "description": "1/2 lb de lomito importado, 1/2 lb de puyazo importado, 6 oz de filete de pollo y 2 longanizas."
+      },
+      "parrillada_para_4": {
+        "name": "Parrillada para 4 personas",
+        "description": "1 lb de lomito importado, 1 lb de puyazo importado, 12 oz de filete de pollo y 4 longanizas."
+      }
+    },
+    "mar_y_tierra": {
+      "subtitle": "Mar y Tierra",
+      "mar_y_tierra": {
+        "name": "Mar y Tierra",
+        "description": "5 camarones jumbo al gusto (ajo, plancha, empanizados o termidor) con corte de 8 oz a elegir: puyazo o lomito."
+      }
+    }
+  },
+  "sandwicheria": {
+    "title": "SANDWICHERÍA",
+    "hamburguesas": {
+      "subtitle": "Hamburguesas",
+      "quesoburguera_clasica_etrog": {
+        "name": "Quesoburguesa Clásica ETROG",
+        "description": "Carne de res con queso americano fundido y vegetales frescos. Con papas fritas.",
+        "note": "Huevo adicional +Q5"
+      },
+      "hamburguesa_premium_etrog": {
+        "name": "Hamburguesa Premium ETROG",
+        "description": "Res a la parrilla con queso, tocino, cebolla caramelizada, tomate y lechuga, en pan artesanal tostado con mantequilla de la casa."
+      }
+    },
+    "burritos": {
+      "subtitle": "Burritos",
+      "burrito_etrog_de_pollo_asado": {
+        "name": "Burrito ETROG de Pollo Asado",
+        "description": "Tortilla de harina con pollo asado, salsa de queso americano, frijoles de la casa, arroz y aguacate. Con salsa de la casa y Papas ETROG."
+      },
+      "burrito_etrog_de_lomito": {
+        "name": "Burrito ETROG de Lomito",
+        "description": "Tortilla de harina con lomito salteado, vegetales, aguacate y mozzarella fundida. Con salsa de la casa."
+      }
+    },
+    "baguettes": {
+      "subtitle": "Baguettes",
+      "baguette_de_oregano_con_pollo": {
+        "name": "Baguette de Orégano con Pollo",
+        "description": "Pollo a la parrilla marinado en aceite de especias y hortalizas. Con papas tipo francesa."
+      },
+      "baguette_de_lomito": {
+        "name": "Baguette de Lomito",
+        "description": "Cubos de lomito salteados con vegetales, aguacate y mozzarella fundido."
+      }
+    }
+  },
+  "pasta": {
+    "title": "PASTA",
+    "fettuccini_alfredo_con_camaron": {
+      "name": "Fettuccini Alfredo con Camarón",
+      "description": "Salsa Alfredo de mantequilla y parmesano, nuez moscada, pimiento dulce y cebolla blanca, con camarones a la parrilla."
+    },
+    "fettuccini_alfredo_con_pollo": {
+      "name": "Fettuccini Alfredo con Pollo a la Parrilla",
+      "description": "Salsa Alfredo cremosa con parmesano, nuez moscada, pimiento dulce y cebolla blanca, con pechuga a la parrilla."
+    },
+    "fettuccini_alfredo_con_lomito": {
+      "name": "Fettuccini Alfredo con Lomito",
+      "description": "Lomito salteado en salsa cremosa con parmesano, pimiento dulce y cebolla blanca."
+    }
+  },
+  "infantil": {
+    "title": "INFANTIL",
+    "deditos_crujientes_de_pollo": {
+      "name": "Deditos Crujientes de Pollo",
+      "description": "Tiras de pollo empanizadas con papas fritas."
+    }
+  },
+  "postres": {
+    "title": "POSTRES",
+    "pie_de_queso": {
+      "name": "Pie de Queso",
+      "description": "Base crujiente y relleno cremoso."
+    },
+    "pie_de_chocobanano": {
+      "name": "Pie de Chocobanano",
+      "description": "Chocolate y banano, textura cremosa."
+    },
+    "crepa_con_helado": {
+      "name": "Crepa con bola de helado",
+      "description": "Crepas tibias con una bola de helado y topping a elegir: fresa, banano o Nutella."
+    },
+    "molletes_dulces": {
+      "name": "Molletes Dulces",
+      "description": "Pan con relleno dulce y cremoso."
+    },
+    "mole_de_platano": {
+      "name": "Mole de Plátano",
+      "description": "Plátano maduro frito napado con mole de chocolate de la casa."
+    }
+  },
+  "guarniciones": {
+    "title": "GUARNICIONES",
+    "queso_fresco": {
+      "name": "Queso fresco",
+      "description": ""
+    },
+    "crema": {
+      "name": "Crema",
+      "description": ""
+    },
+    "longaniza": {
+      "name": "Longaniza",
+      "description": ""
+    },
+    "frijoles_volteados": {
+      "name": "Frijoles volteados",
+      "description": ""
+    },
+    "guacamol": {
+      "name": "Guacamol",
+      "description": ""
+    },
+    "papas_etrog": {
+      "name": "Papas Etrog",
+      "description": "Cubos salteados en mantequilla con pimentón, parmesano y perejil."
+    },
+    "papas_fritas": {
+      "name": "Papas fritas",
+      "description": ""
+    },
+    "huevos": {
+      "name": "Huevos al gusto",
+      "description": ""
+    },
+    "porcion_de_pan": {
+      "name": "Porción de pan",
+      "description": "Simple, ajo o mantequilla."
+    },
+    "porcion_de_tamalitos": {
+      "name": "Porción de tamalitos",
+      "description": ""
+    },
+    "porcion_de_arroz": {
+      "name": "Porción de arroz",
+      "description": ""
+    },
+    "porcion_de_tortillas": {
+      "name": "Porción de tortillas",
+      "description": ""
+    }
+  },
+  "bebidas": {
+    "title": "BEBIDAS",
+    "calientes": {
+      "subtitle": "Calientes",
+      "cafe_americano": {
+        "name": "Café Americano",
+        "description": "Café de la región de Antigua Guatemala, tueste oscuro con notas a chocolate, mora y miel de maple."
+      },
+      "cafe_con_leche": {
+        "name": "Café con leche",
+        "description": ""
+      },
+      "capuchino": {
+        "name": "Capuchino",
+        "description": ""
+      },
+      "latte": {
+        "name": "Latte",
+        "description": ""
+      },
+      "mocca": {
+        "name": "Mocca",
+        "description": ""
+      },
+      "chocolate_con_agua": {
+        "name": "Chocolate con agua",
+        "description": ""
+      },
+      "chocolate_con_leche": {
+        "name": "Chocolate con leche",
+        "description": ""
+      },
+      "te_e_infusiones": {
+        "name": "Té e infusiones",
+        "description": "Manzanilla, verde, manzana-canela, negro, Lipton."
+      }
+    },
+    "moctels": {
+      "subtitle": "Moctels",
+      "ginger_fresh": {
+        "name": "Ginger Fresh",
+        "description": "Syrup de jengibre, limón, jugo de piña y soda."
+      },
+      "atardecer": {
+        "name": "Atardecer",
+        "description": "Cold brew, jugo de naranja y ginger ale."
+      },
+      "pina_colada_virgen": {
+        "name": "Piña colada virgen",
+        "description": "Jugo de piña, crema de coco y toque de leche."
+      },
+      "mojito_de_fresa": {
+        "name": "Mojito de fresa",
+        "description": "Syrup de fresa, jugo de limón, hierbabuena y soda."
+      },
+      "sangria_tinta": {
+        "name": "Sangría Tinta",
+        "description": "Sour mix, soda y vino tinto."
+      }
+    },
+    "vinos_y_espumosos": {
+      "subtitle": "Vinos y Espumosos",
+      "casillero_cabernet": {
+        "name": "Casillero del Diablo Cabernet Sauvignon",
+        "description": "Aromas a cereza y grosella negra con toque de vainilla. Para carnes rojas asadas y quesos maduros."
+      },
+      "casillero_merlot": {
+        "name": "Casillero del Diablo Merlot",
+        "description": "Cereza y guinda con toques de toffee y vainilla. Para quesos suaves, pastas, risottos y carnes ligeras."
+      },
+      "casillero_rose": {
+        "name": "Casillero del Diablo Rosé",
+        "description": "Balance entre acidez, mineralidad y delicadeza. Para aperitivos, quesos y frutos secos."
+      },
+      "casillero_sauvignon": {
+        "name": "Casillero del Diablo Sauvignon Blanc",
+        "description": "Notas a lima, durazno y toques herbales. Para ceviches, mariscos frescos y ensaladas."
+      },
+      "moscato_fili": {
+        "name": "Moscato Fili",
+        "description": "Vino dulce y aromático. Para postres, frutas frescas y quesos azules."
+      },
+      "fragolino_bianco": {
+        "name": "Fragolino Bianco",
+        "description": "Semiespumoso a base de vino. Para repostería y ensaladas de frutas."
+      },
+      "fragolino_rosso": {
+        "name": "Fragolino Rosso",
+        "description": "Semiespumoso a base de vino. Para pastas y pizza."
+      },
+      "frontera_merlot": {
+        "name": "Frontera Merlot",
+        "description": "Cereza, pimientos y toque a cacao. Para pastas, quesos, carnes rojas y pollo a la parrilla."
+      },
+      "frontera_carmenere": {
+        "name": "Frontera Carménère",
+        "description": "Suavidad y equilibrio en boca. Para pastas, quesos, pollo a la parrilla y risottos."
+      },
+      "frontera_spritzer_rose": {
+        "name": "Frontera Spritzer Rosé Roses",
+        "description": "Aroma a pétalos de rosas. Aperitivo o con postres."
+      },
+      "frontera_spritzer_elderflower": {
+        "name": "Frontera Spritzer Elderflower",
+        "description": "Vino blanco y flor de saúco. Para comidas ligeras y aperitivos."
+      }
+    },
+    "naturales": {
+      "subtitle": "Naturales",
+      "jamaica": {
+        "name": "Jamaica",
+        "description": "",
+        "note": "Pichel Q100"
+      },
+      "guanabana": {
+        "name": "Guanábana",
+        "description": "",
+        "note": "Pichel Q100"
+      },
+      "horchata": {
+        "name": "Horchata",
+        "description": "",
+        "note": "Pichel Q100"
+      },
+      "naranjada_con_agua": {
+        "name": "Naranjada con agua",
+        "description": "",
+        "note": "Pichel Q100"
+      },
+      "naranjada_con_soda": {
+        "name": "Naranjada con soda",
+        "description": "",
+        "note": "Pichel Q110"
+      },
+      "naranjada_con_pepitoria": {
+        "name": "Naranjada con pepitoria",
+        "description": ""
+      },
+      "limonada_con_agua": {
+        "name": "Limonada con agua",
+        "description": "",
+        "note": "Pichel Q100"
+      },
+      "limonada_con_soda": {
+        "name": "Limonada con soda",
+        "description": "",
+        "note": "Pichel Q110"
+      },
+      "jugo_de_naranja": {
+        "name": "Jugo de naranja",
+        "description": ""
+      }
+    },
+    "frias": {
+      "subtitle": "Frías",
+      "coca_cola": {
+        "name": "Coca Cola",
+        "description": ""
+      },
+      "coca_cola_sabores": {
+        "name": "Coca Cola sabores",
+        "description": "Fanta naranja, Sprite, Toronja, Coca Zero."
+      },
+      "pepsi": {
+        "name": "Pepsi",
+        "description": ""
+      },
+      "pepsi_sabores": {
+        "name": "Pepsi sabores",
+        "description": "Mineral, Grapete."
+      },
+      "agua_pura": {
+        "name": "Agua pura en botella",
+        "description": ""
+      },
+      "cimarrona": {
+        "name": "Cimarrona",
+        "description": ""
+      },
+      "v8_preparado": {
+        "name": "V8 preparado",
+        "description": ""
+      },
+      "fruit_punch": {
+        "name": "Fruit Punch",
+        "description": "Jugo de piña, limón, naranja y granadina."
+      }
+    },
+    "frappe": {
+      "subtitle": "Frappés",
+      "frappuchino": {
+        "name": "Frappuchino",
+        "description": "Café, leche, helado de vainilla, crema batida y topping de chocolate."
+      },
+      "frappe_oreo": {
+        "name": "Frappé Oreo",
+        "description": "Café, leche, galleta Oreo, syrup de chocolate y crema batida."
+      },
+      "frappe_de_caramelo_con_mani": {
+        "name": "Frappé de caramelo con maní",
+        "description": "Café, leche, syrup de caramelo, maní y crema batida."
+      }
+    },
+    "licuados": {
+      "subtitle": "Licuados",
+      "licuado_de_fruta": {
+        "name": "Licuado de fruta",
+        "description": "Banano, fresa, papaya o sandía.",
+        "note": "Leche entera o deslactosada"
+      },
+      "licuado_fresa_banano": {
+        "name": "Licuado Fresa-banano",
+        "description": "",
+        "note": "Leche entera o deslactosada"
+      },
+      "tres_amores": {
+        "name": "Tres Amores",
+        "description": "Mora, fresa y jugo de naranja.",
+        "note": "Leche entera o deslactosada"
+      },
+      "chocomilk": {
+        "name": "Chocomilk",
+        "description": "",
+        "note": "Leche entera o deslactosada"
+      }
+    }
+  },
+  "buffet": {
+    "title": "BUFFET",
+    "buffet_dominical": {
+      "name": "Buffet dominical",
+      "description": "Todos los domingos, 7:00 am a 11:00 am. Precio y contenido por confirmar por WhatsApp."
+    }
+  }
+}

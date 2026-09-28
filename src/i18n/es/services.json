@@ -1,0 +1,40 @@
+{
+  "buffet_dominical": {
+    "title": "Buffet dominical",
+    "description": "Todos los domingos",
+    "time": "7:00 am a 11:00 am"
+  },
+  "desayunos": {
+    "title": "Desayunos",
+    "description": "Todos los días",
+    "time": "7:00 am a 11:00 am"
+  },
+  "almuerzo": {
+    "title": "Almuerzo",
+    "description": "Todos los días",
+    "time": "11:00 am a 3:00 pm"
+  },
+  "cena": {
+    "title": "Cena",
+    "description": "Todos los días",
+    "time": "7:00 pm a 10:00 pm"
+  },
+  "section_label": "Servicios",
+  "section_title": "HORARIOS Y ATENCIÓN",
+  "special": {
+    "section_label": "Especiales",
+    "section_title": "SERVICIOS ADICIONALES",
+    "eventos": {
+      "title": "Eventos",
+      "description": "Salón propio para cumpleaños, baby showers, aniversarios, comidas de grupo y eventos corporativos. Montaje, menú y espacio se coordinan por WhatsApp."
+    },
+    "mesas_romanticas": {
+      "title": "Mesas románticas",
+      "description": "Cenas de pareja, aniversarios, ocasiones especiales. Decoración personalizada y menú especial por WhatsApp."
+    },
+    "delivery": {
+      "title": "Delivery",
+      "description": "Pedidos por WhatsApp."
+    }
+  }
+}

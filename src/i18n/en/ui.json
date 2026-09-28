@@ -1,0 +1,18 @@
+{
+  "hotel_label": "Hotel & Restaurant",
+  "aroma_y_sabor": "Aroma & Flavor",
+  "location": "Retalhuleu, Guatemala",
+  "intro_quote": "Here we celebrate.",
+  "intro_text": "At Etrog Hotel and Restaurant we make you feel at home. Rest in our comfortable rooms and enjoy the finest Guatemalan food in a family atmosphere full of flavor",
+  "footer": {
+    "tagline": "ETROG · AROMA & FLAVOR",
+    "location": "Centro de Retalhuleu, Guatemala",
+    "whatsapp_cta": "Inquire via WhatsApp →",
+    "price_range_label": "Price range",
+    "price_breakfast": "Breakfast: Q40 – Q70",
+    "price_main": "Main courses: Q70 – Q200",
+    "price_grill": "Group grill: Q300 – Q550",
+    "price_drinks": "Drinks: Q12 – Q240",
+    "pride": "Guatemalan cuisine with local pride"
+  }
+}

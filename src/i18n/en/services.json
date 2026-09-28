@@ -1,0 +1,40 @@
+{
+  "buffet_dominical": {
+    "title": "Sunday Buffet",
+    "description": "Every Sunday",
+    "time": "7:00 am to 11:00 am"
+  },
+  "desayunos": {
+    "title": "Breakfast",
+    "description": "Every day",
+    "time": "7:00 am to 11:00 am"
+  },
+  "almuerzo": {
+    "title": "Lunch",
+    "description": "Every day",
+    "time": "11:00 am to 3:00 pm"
+  },
+  "cena": {
+    "title": "Dinner",
+    "description": "Every day",
+    "time": "7:00 pm to 10:00 pm"
+  },
+  "section_label": "Services",
+  "section_title": "HOURS & SERVICE",
+  "special": {
+    "section_label": "Specials",
+    "section_title": "ADDITIONAL SERVICES",
+    "eventos": {
+      "title": "Events",
+      "description": "Private hall for birthdays, baby showers, anniversaries, group meals and corporate events. Setup, menu and space coordinated via WhatsApp."
+    },
+    "mesas_romanticas": {
+      "title": "Romantic Tables",
+      "description": "Couple dinners, anniversaries, special occasions. Custom decoration and special menu via WhatsApp."
+    },
+    "delivery": {
+      "title": "Delivery",
+      "description": "Orders via WhatsApp."
+    }
+  }
+}

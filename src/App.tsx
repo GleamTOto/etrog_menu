@@ -1,92 +1,92 @@
 import { useEffect, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Intro } from './components/Intro'
+import { LanguageSwitcher } from './components/LanguageSwitcher'
 
-/* ─── Data ─── */
+/* ─── Data Types ─── */
 
 interface Dish {
-  name: string
+  nameKey: string
   price?: string
-  description: string
-  note?: string
+  descriptionKey: string
+  noteKey?: string
 }
 
 interface SubSection {
-  subtitle: string
+  subtitleKey: string
   dishes: Dish[]
 }
 
 interface MenuSection {
   number: string
-  title: string
+  titleKey: string
+  type: 'default' | 'guarniciones' | 'buffet'
   subsections?: SubSection[]
   dishes?: Dish[]
 }
 
+/* ─── Menu Data (translation keys) ─── */
+
 const menuSections: MenuSection[] = [
   {
     number: '01',
-    title: 'DESAYUNOS',
+    titleKey: 'desayunos.title',
+    type: 'default',
     subsections: [
       {
-        subtitle: 'Guatemalteco',
+        subtitleKey: 'desayunos.guatemalteco.subtitle',
         dishes: [
           {
-            name: 'Amanecer Etrog',
+            nameKey: 'desayunos.guatemalteco.amanecer_etrog.name',
             price: 'Q70',
-            description:
-              'Huevos al gusto, pincho de carne asada, tortillas con queso, frijoles parados (picantes), rodaja de plátano a la parrilla, crema y chirmol.',
-            note: 'Incluye café con refill, jugo de temporada y pan o tortilla',
+            descriptionKey: 'desayunos.guatemalteco.amanecer_etrog.description',
+            noteKey: 'desayunos.guatemalteco.amanecer_etrog.note',
           },
           {
-            name: 'Desayuno Guatemalteco',
+            nameKey: 'desayunos.guatemalteco.desayuno_guatemalteco.name',
             price: 'Q60',
-            description:
-              'Huevos fritos al gusto, frijoles volteados, longaniza criolla, salsa ranchera, queso fresco, plátanos fritos, crema.',
-            note: 'Incluye café con refill, jugo y pan o tortilla',
+            descriptionKey: 'desayunos.guatemalteco.desayuno_guatemalteco.description',
+            noteKey: 'desayunos.guatemalteco.desayuno_guatemalteco.note',
           },
           {
-            name: 'Chilaquiles',
+            nameKey: 'desayunos.guatemalteco.chilaquiles.name',
             price: 'Q65',
-            description:
-              'Chilaquiles con pollo desmenuzado en salsa roja y verde, huevos al gusto y lascas de aguacate.',
-            note: 'Incluye café con refill, jugo y pan o tortilla',
+            descriptionKey: 'desayunos.guatemalteco.chilaquiles.description',
+            noteKey: 'desayunos.guatemalteco.chilaquiles.note',
           },
         ],
       },
       {
-        subtitle: 'Motuleño',
+        subtitleKey: 'desayunos.motuleno.subtitle',
         dishes: [
           {
-            name: 'Huevos Motuleños',
+            nameKey: 'desayunos.motuleno.huevos_motulenos.name',
             price: 'Q55',
-            description:
-              'Huevos fritos sobre tortillas con frijol, salsa ranchera, maíz dulce, queso fresco, cilantro y plátanos fritos con crema y sal gruesa.',
-            note: 'Incluye café con refill, jugo y pan o tortilla',
+            descriptionKey: 'desayunos.motuleno.huevos_motulenos.description',
+            noteKey: 'desayunos.motuleno.huevos_motulenos.note',
           },
           {
-            name: 'Desayuno Americano',
+            nameKey: 'desayunos.motuleno.desayuno_americano.name',
             price: 'Q50',
-            description: 'Huevos al gusto, panqueques, tocino frito y fruta fresca.',
-            note: 'Incluye café con refill, jugo y pan o tortilla',
+            descriptionKey: 'desayunos.motuleno.desayuno_americano.description',
+            noteKey: 'desayunos.motuleno.desayuno_americano.note',
           },
         ],
       },
       {
-        subtitle: 'Dulces',
+        subtitleKey: 'desayunos.dulces.subtitle',
         dishes: [
           {
-            name: 'Panqueques Campestres',
+            nameKey: 'desayunos.dulces.panqueques_campestres.name',
             price: 'Q40',
-            description:
-              'Tres panqueques con fruta de temporada, mantequilla y miel de abeja o syrup de maple.',
-            note: 'Incluye café con refill, jugo y pan o tortilla',
+            descriptionKey: 'desayunos.dulces.panqueques_campestres.description',
+            noteKey: 'desayunos.dulces.panqueques_campestres.note',
           },
           {
-            name: 'Omelet',
+            nameKey: 'desayunos.dulces.omelet.name',
             price: 'Q65',
-            description:
-              'Omelet preparado al momento, relleno a elegir: jamón y queso, champiñones o espinaca.',
-            note: 'Incluye café con refill, jugo y pan o tortilla',
+            descriptionKey: 'desayunos.dulces.omelet.description',
+            noteKey: 'desayunos.dulces.omelet.note',
           },
         ],
       },
@@ -94,74 +94,70 @@ const menuSections: MenuSection[] = [
   },
   {
     number: '02',
-    title: 'TRADICIONALES',
+    titleKey: 'tradicionales.title',
+    type: 'default',
     dishes: [
       {
-        name: 'Caldo de Gallina',
+        nameKey: 'tradicionales.caldo_de_gallina.name',
         price: 'Q70',
-        description:
-          'Caldo rojo de gallina con vegetales al punto y hierbas de la región. Servido con arroz blanco, tamalitos de maíz y aguacate fresco.',
+        descriptionKey: 'tradicionales.caldo_de_gallina.description',
       },
       {
-        name: 'Caldo de Chojín',
+        nameKey: 'tradicionales.caldo_de_chojin.name',
         price: 'Q70',
-        description:
-          'Caldo de carne de res chojineada al carbón con vegetales y hierbas de la región. Servido con arroz blanco, tamalitos de maíz y aguacate fresco.',
+        descriptionKey: 'tradicionales.caldo_de_chojin.description',
       },
     ],
   },
   {
     number: '03',
-    title: 'ENTRADAS',
+    titleKey: 'entradas.title',
+    type: 'default',
     dishes: [
       {
-        name: 'Carpaccio de lomito',
+        nameKey: 'entradas.carpaccio_de_lomito.name',
         price: 'Q75',
-        description: 'Láminas de lomito con cítricos y aderezo de la casa.',
+        descriptionKey: 'entradas.carpaccio_de_lomito.description',
       },
       {
-        name: 'Nachos con carne y queso',
+        nameKey: 'entradas.nachos_con_carne_y_queso.name',
         price: 'Q55',
-        description: 'Totopos artesanales con queso fundido y carne sazonada. Para compartir.',
+        descriptionKey: 'entradas.nachos_con_carne_y_queso.description',
       },
       {
-        name: 'Sopa de tortilla',
+        nameKey: 'entradas.sopa_de_tortilla.name',
         price: 'Q45',
-        description: 'Caldo especiado con tortilla crujiente.',
+        descriptionKey: 'entradas.sopa_de_tortilla.description',
       },
       {
-        name: 'Alitas en salsa Búfalo o BBQ',
+        nameKey: 'entradas.alitas.name',
         price: 'Q55',
-        description: 'Alitas glaseadas en salsa Búfalo (picante) o BBQ (dulce y ahumada).',
+        descriptionKey: 'entradas.alitas.description',
       },
       {
-        name: 'Mejillones al Perol',
+        nameKey: 'entradas.mejillones_al_perol.name',
         price: 'Q100',
-        description:
-          'Mejillones media concha sofritos en mantequilla de ajo con cebolla en brunoise, marinados en vino blanco y terminados en crema.',
+        descriptionKey: 'entradas.mejillones_al_perol.description',
       },
     ],
     subsections: [
       {
-        subtitle: 'Ensaladas',
+        subtitleKey: 'entradas.ensaladas.subtitle',
         dishes: [
           {
-            name: 'Ensalada César',
+            nameKey: 'entradas.ensaladas.ensalada_cesar.name',
             price: 'Q65',
-            description:
-              'Hojas frescas con aderezo César, filete de pollo a la plancha, tomate, aceitunas negras y verdes, cebolla, crutones y parmesano.',
+            descriptionKey: 'entradas.ensaladas.ensalada_cesar.description',
           },
           {
-            name: 'Ensalada Mixta con Pollo',
+            nameKey: 'entradas.ensaladas.ensalada_mixta_con_pollo.name',
             price: 'Q65',
-            description:
-              'Lechugas con pepino, tomate en gajos, cebolla morada, huevo duro, chile pimiento, queso fresco y pollo. Chips de tortilla y aderezo Mil Islas.',
+            descriptionKey: 'entradas.ensaladas.ensalada_mixta_con_pollo.description',
           },
           {
-            name: 'Ensalada Campestre de Pollo',
+            nameKey: 'entradas.ensaladas.ensalada_campestre_de_pollo.name',
             price: 'Q65',
-            description:
-              'Lechuga con maíz dulce, queso fresco, tomate y cebolla, con pollo a la plancha y aderezo italiano.',
+            descriptionKey: 'entradas.ensaladas.ensalada_campestre_de_pollo.description',
           },
         ],
       },
@@ -169,90 +165,91 @@ const menuSections: MenuSection[] = [
   },
   {
     number: '04',
-    title: 'FRUTOS DEL MAR',
+    titleKey: 'frutos_del_mar.title',
+    type: 'default',
     subsections: [
       {
-        subtitle: 'Parrilla',
+        subtitleKey: 'frutos_del_mar.parrilla.subtitle',
         dishes: [
           {
-            name: 'Parrillada Mazatleca',
+            nameKey: 'frutos_del_mar.parrilla.parrillada_mazatleca.name',
             price: 'Q170',
-            description: 'Tentáculos de pulpo, filete de tilapia y camarones jumbo asados al punto.',
+            descriptionKey: 'frutos_del_mar.parrilla.parrillada_mazatleca.description',
           },
         ],
       },
       {
-        subtitle: 'Caldos',
+        subtitleKey: 'frutos_del_mar.caldos.subtitle',
         dishes: [
           {
-            name: 'Caldo de Mariscos',
+            nameKey: 'frutos_del_mar.caldos.caldo_de_mariscos.name',
             price: 'Q200',
-            description: 'Jaiba, mejillón en media concha, camarones, aros de calamar y almeja blanca, con morra frita.',
+            descriptionKey: 'frutos_del_mar.caldos.caldo_de_mariscos.description',
           },
         ],
       },
       {
-        subtitle: 'Pescados',
+        subtitleKey: 'frutos_del_mar.pescados.subtitle',
         dishes: [
           {
-            name: 'Filete de tilapia',
+            nameKey: 'frutos_del_mar.pescados.filete_de_tilapia.name',
             price: 'Q75',
-            description: 'A la plancha, empanizado o al ajillo.',
+            descriptionKey: 'frutos_del_mar.pescados.filete_de_tilapia.description',
           },
           {
-            name: 'Tilapia entera',
+            nameKey: 'frutos_del_mar.pescados.tilapia_entera.name',
             price: 'Q99',
-            description: 'Frita o al ajillo.',
+            descriptionKey: 'frutos_del_mar.pescados.tilapia_entera.description',
           },
           {
-            name: 'Mojarra Zarandeada',
+            nameKey: 'frutos_del_mar.pescados.mojarra_zarandeada.name',
             price: 'Q110',
-            description: 'Tilapia marinada en adobo de chiles y asada a la parrilla.',
+            descriptionKey: 'frutos_del_mar.pescados.mojarra_zarandeada.description',
           },
         ],
       },
       {
-        subtitle: 'Camarones',
+        subtitleKey: 'frutos_del_mar.camarones.subtitle',
         dishes: [
           {
-            name: 'Camarones ETROG',
+            nameKey: 'frutos_del_mar.camarones.camarones_etrog.name',
             price: 'Q165',
-            description: 'Receta de la casa: gratinados estilo termidor o sellados a la parrilla.',
+            descriptionKey: 'frutos_del_mar.camarones.camarones_etrog.description',
           },
           {
-            name: 'Camarón jumbo',
+            nameKey: 'frutos_del_mar.camarones.camaron_jumbo.name',
             price: 'Q125',
-            description: 'A la plancha, empanizado o al ajillo.',
+            descriptionKey: 'frutos_del_mar.camarones.camaron_jumbo.description',
           },
           {
-            name: 'Camarones Louisiana',
+            nameKey: 'frutos_del_mar.camarones.camarones_louisiana.name',
             price: 'Q125',
-            description: 'Salteados con especias Cajun, papa baby y elote dulce. Servidos con arroz.',
+            descriptionKey: 'frutos_del_mar.camarones.camarones_louisiana.description',
           },
           {
-            name: 'Camarones Tropicales al Coco',
+            nameKey: 'frutos_del_mar.camarones.camarones_tropicales_al_coco.name',
             price: 'Q135',
-            description: 'Empanizados en batter y coco rallado, con toque picante, aderezo Mil Islas y guarnición a elección.',
+            descriptionKey: 'frutos_del_mar.camarones.camarones_tropicales_al_coco.description',
           },
         ],
       },
       {
-        subtitle: 'Mariscos',
+        subtitleKey: 'frutos_del_mar.mariscos.subtitle',
         dishes: [
           {
-            name: 'Pulpo al ajillo',
+            nameKey: 'frutos_del_mar.mariscos.pulpo_al_ajillo.name',
             price: 'Q99',
-            description: 'Pulpo salteado al ajillo.',
+            descriptionKey: 'frutos_del_mar.mariscos.pulpo_al_ajillo.description',
           },
         ],
       },
       {
-        subtitle: 'Crudos',
+        subtitleKey: 'frutos_del_mar.crudos.subtitle',
         dishes: [
           {
-            name: 'Ceviche',
+            nameKey: 'frutos_del_mar.crudos.ceviche.name',
             price: 'Q125',
-            description: 'Marinado en cítricos con el toque de la casa. Camarón o mixto (camarón, pulpo y calamar).',
+            descriptionKey: 'frutos_del_mar.crudos.ceviche.description',
           },
         ],
       },
@@ -260,55 +257,56 @@ const menuSections: MenuSection[] = [
   },
   {
     number: '05',
-    title: 'CORTES Y PARRILLA',
+    titleKey: 'cortes_y_parrilla.title',
+    type: 'default',
     subsections: [
       {
-        subtitle: 'Cortes',
+        subtitleKey: 'cortes_y_parrilla.cortes.subtitle',
         dishes: [
           {
-            name: 'Puyazo importado (1/2 lb)',
+            nameKey: 'cortes_y_parrilla.cortes.puyazo_importado.name',
             price: 'Q140',
-            description: 'Corte importado asado a la parrilla al punto de su elección, con guarniciones.',
+            descriptionKey: 'cortes_y_parrilla.cortes.puyazo_importado.description',
           },
           {
-            name: 'Lomito importado (1/2 lb)',
+            nameKey: 'cortes_y_parrilla.cortes.lomito_importado.name',
             price: 'Q140',
-            description: 'Corte importado asado a la parrilla al punto de su elección, con guarniciones.',
+            descriptionKey: 'cortes_y_parrilla.cortes.lomito_importado.description',
           },
           {
-            name: 'Churrasco de Viuda Importada',
+            nameKey: 'cortes_y_parrilla.cortes.churrasco_de_viuda_importada.name',
             price: 'Q110',
-            description: 'Corte importado asado a la parrilla al punto de su elección, con guarniciones.',
+            descriptionKey: 'cortes_y_parrilla.cortes.churrasco_de_viuda_importada.description',
           },
           {
-            name: 'Pollo a la parrilla (6 oz)',
+            nameKey: 'cortes_y_parrilla.cortes.pollo_a_la_parrilla.name',
             price: 'Q75',
-            description: 'Filete de pollo a la parrilla.',
+            descriptionKey: 'cortes_y_parrilla.cortes.pollo_a_la_parrilla.description',
           },
         ],
       },
       {
-        subtitle: 'Parrilladas',
+        subtitleKey: 'cortes_y_parrilla.parrilladas.subtitle',
         dishes: [
           {
-            name: 'Parrillada para 2 personas',
+            nameKey: 'cortes_y_parrilla.parrilladas.parrillada_para_2.name',
             price: 'Q300',
-            description: '1/2 lb de lomito importado, 1/2 lb de puyazo importado, 6 oz de filete de pollo y 2 longanizas.',
+            descriptionKey: 'cortes_y_parrilla.parrilladas.parrillada_para_2.description',
           },
           {
-            name: 'Parrillada para 4 personas',
+            nameKey: 'cortes_y_parrilla.parrilladas.parrillada_para_4.name',
             price: 'Q550',
-            description: '1 lb de lomito importado, 1 lb de puyazo importado, 12 oz de filete de pollo y 4 longanizas.',
+            descriptionKey: 'cortes_y_parrilla.parrilladas.parrillada_para_4.description',
           },
         ],
       },
       {
-        subtitle: 'Mar y Tierra',
+        subtitleKey: 'cortes_y_parrilla.mar_y_tierra.subtitle',
         dishes: [
           {
-            name: 'Mar y Tierra',
+            nameKey: 'cortes_y_parrilla.mar_y_tierra.mar_y_tierra.name',
             price: 'Q225',
-            description: '5 camarones jumbo al gusto (ajo, plancha, empanizados o termidor) con corte de 8 oz a elegir: puyazo o lomito.',
+            descriptionKey: 'cortes_y_parrilla.mar_y_tierra.mar_y_tierra.description',
           },
         ],
       },
@@ -316,51 +314,52 @@ const menuSections: MenuSection[] = [
   },
   {
     number: '06',
-    title: 'SANDWICHERÍA',
+    titleKey: 'sandwicheria.title',
+    type: 'default',
     subsections: [
       {
-        subtitle: 'Hamburguesas',
+        subtitleKey: 'sandwicheria.hamburguesas.subtitle',
         dishes: [
           {
-            name: 'Quesoburguesa Clásica ETROG',
+            nameKey: 'sandwicheria.hamburguesas.quesoburguera_clasica_etrog.name',
             price: 'Q60',
-            description: 'Carne de res con queso americano fundido y vegetales frescos. Con papas fritas.',
-            note: 'Huevo adicional +Q5',
+            descriptionKey: 'sandwicheria.hamburguesas.quesoburguera_clasica_etrog.description',
+            noteKey: 'sandwicheria.hamburguesas.quesoburguera_clasica_etrog.note',
           },
           {
-            name: 'Hamburguesa Premium ETROG',
+            nameKey: 'sandwicheria.hamburguesas.hamburguesa_premium_etrog.name',
             price: 'Q80',
-            description: 'Res a la parrilla con queso, tocino, cebolla caramelizada, tomate y lechuga, en pan artesanal tostado con mantequilla de la casa.',
+            descriptionKey: 'sandwicheria.hamburguesas.hamburguesa_premium_etrog.description',
           },
         ],
       },
       {
-        subtitle: 'Burritos',
+        subtitleKey: 'sandwicheria.burritos.subtitle',
         dishes: [
           {
-            name: 'Burrito ETROG de Pollo Asado',
+            nameKey: 'sandwicheria.burritos.burrito_etrog_de_pollo_asado.name',
             price: 'Q60',
-            description: 'Tortilla de harina con pollo asado, salsa de queso americano, frijoles de la casa, arroz y aguacate. Con salsa de la casa y Papas ETROG.',
+            descriptionKey: 'sandwicheria.burritos.burrito_etrog_de_pollo_asado.description',
           },
           {
-            name: 'Burrito ETROG de Lomito',
+            nameKey: 'sandwicheria.burritos.burrito_etrog_de_lomito.name',
             price: 'Q75',
-            description: 'Tortilla de harina con lomito salteado, vegetales, aguacate y mozzarella fundida. Con salsa de la casa.',
+            descriptionKey: 'sandwicheria.burritos.burrito_etrog_de_lomito.description',
           },
         ],
       },
       {
-        subtitle: 'Baguettes',
+        subtitleKey: 'sandwicheria.baguettes.subtitle',
         dishes: [
           {
-            name: 'Baguette de Orégano con Pollo',
+            nameKey: 'sandwicheria.baguettes.baguette_de_oregano_con_pollo.name',
             price: 'Q60',
-            description: 'Pollo a la parrilla marinado en aceite de especias y hortalizas. Con papas tipo francesa.',
+            descriptionKey: 'sandwicheria.baguettes.baguette_de_oregano_con_pollo.description',
           },
           {
-            name: 'Baguette de Lomito',
+            nameKey: 'sandwicheria.baguettes.baguette_de_lomito.name',
             price: 'Q75',
-            description: 'Cubos de lomito salteados con vegetales, aguacate y mozzarella fundido.',
+            descriptionKey: 'sandwicheria.baguettes.baguette_de_lomito.description',
           },
         ],
       },
@@ -368,288 +367,216 @@ const menuSections: MenuSection[] = [
   },
   {
     number: '07',
-    title: 'PASTA',
+    titleKey: 'pasta.title',
+    type: 'default',
     dishes: [
       {
-        name: 'Fettuccini Alfredo con Camarón',
+        nameKey: 'pasta.fettuccini_alfredo_con_camaron.name',
         price: 'Q135',
-        description: 'Salsa Alfredo de mantequilla y parmesano, nuez moscada, pimiento dulce y cebolla blanca, con camarones a la parrilla.',
+        descriptionKey: 'pasta.fettuccini_alfredo_con_camaron.description',
       },
       {
-        name: 'Fettuccini Alfredo con Pollo a la Parrilla',
+        nameKey: 'pasta.fettuccini_alfredo_con_pollo.name',
         price: 'Q135',
-        description: 'Salsa Alfredo cremosa con parmesano, nuez moscada, pimiento dulce y cebolla blanca, con pechuga a la parrilla.',
+        descriptionKey: 'pasta.fettuccini_alfredo_con_pollo.description',
       },
       {
-        name: 'Fettuccini Alfredo con Lomito',
+        nameKey: 'pasta.fettuccini_alfredo_con_lomito.name',
         price: 'Q135',
-        description: 'Lomito salteado en salsa cremosa con parmesano, pimiento dulce y cebolla blanca.',
+        descriptionKey: 'pasta.fettuccini_alfredo_con_lomito.description',
       },
     ],
   },
   {
     number: '08',
-    title: 'INFANTIL',
+    titleKey: 'infantil.title',
+    type: 'default',
     dishes: [
       {
-        name: 'Deditos Crujientes de Pollo',
+        nameKey: 'infantil.deditos_crujientes_de_pollo.name',
         price: 'Q40',
-        description: 'Tiras de pollo empanizadas con papas fritas.',
+        descriptionKey: 'infantil.deditos_crujientes_de_pollo.description',
       },
     ],
   },
   {
     number: '09',
-    title: 'POSTRES',
+    titleKey: 'postres.title',
+    type: 'default',
     dishes: [
       {
-        name: 'Pie de Queso',
+        nameKey: 'postres.pie_de_queso.name',
         price: 'Q35',
-        description: 'Base crujiente y relleno cremoso.',
+        descriptionKey: 'postres.pie_de_queso.description',
       },
       {
-        name: 'Pie de Chocobanano',
+        nameKey: 'postres.pie_de_chocobanano.name',
         price: 'Q35',
-        description: 'Chocolate y banano, textura cremosa.',
+        descriptionKey: 'postres.pie_de_chocobanano.description',
       },
       {
-        name: 'Crepa con bola de helado',
+        nameKey: 'postres.crepa_con_helado.name',
         price: 'Q35',
-        description: 'Crepas tibias con una bola de helado y topping a elegir: fresa, banano o Nutella.',
+        descriptionKey: 'postres.crepa_con_helado.description',
       },
       {
-        name: 'Molletes Dulces',
+        nameKey: 'postres.molletes_dulces.name',
         price: 'Q30',
-        description: 'Pan con relleno dulce y cremoso.',
+        descriptionKey: 'postres.molletes_dulces.description',
       },
       {
-        name: 'Mole de Plátano',
+        nameKey: 'postres.mole_de_platano.name',
         price: 'Q30',
-        description: 'Plátano maduro frito napado con mole de chocolate de la casa.',
+        descriptionKey: 'postres.mole_de_platano.description',
       },
     ],
   },
   {
     number: '10',
-    title: 'GUARNICIONES',
+    titleKey: 'guarniciones.title',
+    type: 'guarniciones',
     dishes: [
-      { name: 'Queso fresco', price: 'Q12', description: '' },
-      { name: 'Crema', price: 'Q12', description: '' },
-      { name: 'Longaniza', price: 'Q16', description: '' },
-      { name: 'Frijoles volteados', price: 'Q10', description: '' },
-      { name: 'Guacamol', price: 'Q20', description: '' },
-      { name: 'Papas Etrog', price: 'Q25', description: 'Cubos salteados en mantequilla con pimentón, parmesano y perejil.' },
-      { name: 'Papas fritas', price: 'Q25', description: '' },
-      { name: 'Huevos al gusto', price: 'Q15', description: '' },
-      { name: 'Porción de pan', price: 'Q10', description: 'Simple, ajo o mantequilla.' },
-      { name: 'Porción de tamalitos', price: 'Q10', description: '' },
-      { name: 'Porción de arroz', price: 'Q10', description: '' },
-      { name: 'Porción de tortillas', price: 'Q7', description: '' },
+      { nameKey: 'guarniciones.queso_fresco.name', price: 'Q12', descriptionKey: 'guarniciones.queso_fresco.description' },
+      { nameKey: 'guarniciones.crema.name', price: 'Q12', descriptionKey: 'guarniciones.crema.description' },
+      { nameKey: 'guarniciones.longaniza.name', price: 'Q16', descriptionKey: 'guarniciones.longaniza.description' },
+      { nameKey: 'guarniciones.frijoles_volteados.name', price: 'Q10', descriptionKey: 'guarniciones.frijoles_volteados.description' },
+      { nameKey: 'guarniciones.guacamol.name', price: 'Q20', descriptionKey: 'guarniciones.guacamol.description' },
+      { nameKey: 'guarniciones.papas_etrog.name', price: 'Q25', descriptionKey: 'guarniciones.papas_etrog.description' },
+      { nameKey: 'guarniciones.papas_fritas.name', price: 'Q25', descriptionKey: 'guarniciones.papas_fritas.description' },
+      { nameKey: 'guarniciones.huevos.name', price: 'Q15', descriptionKey: 'guarniciones.huevos.description' },
+      { nameKey: 'guarniciones.porcion_de_pan.name', price: 'Q10', descriptionKey: 'guarniciones.porcion_de_pan.description' },
+      { nameKey: 'guarniciones.porcion_de_tamalitos.name', price: 'Q10', descriptionKey: 'guarniciones.porcion_de_tamalitos.description' },
+      { nameKey: 'guarniciones.porcion_de_arroz.name', price: 'Q10', descriptionKey: 'guarniciones.porcion_de_arroz.description' },
+      { nameKey: 'guarniciones.porcion_de_tortillas.name', price: 'Q7', descriptionKey: 'guarniciones.porcion_de_tortillas.description' },
     ],
   },
   {
     number: '11',
-    title: 'BEBIDAS',
+    titleKey: 'bebidas.title',
+    type: 'default',
     subsections: [
       {
-        subtitle: 'Calientes',
+        subtitleKey: 'bebidas.calientes.subtitle',
         dishes: [
-          {
-            name: 'Café Americano',
-            price: 'Q20',
-            description: 'Café de la región de Antigua Guatemala, tueste oscuro con notas a chocolate, mora y miel de maple.',
-          },
-          { name: 'Café con leche', price: 'Q25', description: '' },
-          { name: 'Capuchino', price: 'Q25', description: '' },
-          { name: 'Latte', price: 'Q25', description: '' },
-          { name: 'Mocca', price: 'Q30', description: '' },
-          { name: 'Chocolate con agua', price: 'Q25', description: '' },
-          { name: 'Chocolate con leche', price: 'Q30', description: '' },
-          {
-            name: 'Té e infusiones',
-            price: 'Q15',
-            description: 'Manzanilla, verde, manzana-canela, negro, Lipton.',
-          },
+          { nameKey: 'bebidas.calientes.cafe_americano.name', price: 'Q20', descriptionKey: 'bebidas.calientes.cafe_americano.description' },
+          { nameKey: 'bebidas.calientes.cafe_con_leche.name', price: 'Q25', descriptionKey: 'bebidas.calientes.cafe_con_leche.description' },
+          { nameKey: 'bebidas.calientes.capuchino.name', price: 'Q25', descriptionKey: 'bebidas.calientes.capuchino.description' },
+          { nameKey: 'bebidas.calientes.latte.name', price: 'Q25', descriptionKey: 'bebidas.calientes.latte.description' },
+          { nameKey: 'bebidas.calientes.mocca.name', price: 'Q30', descriptionKey: 'bebidas.calientes.mocca.description' },
+          { nameKey: 'bebidas.calientes.chocolate_con_agua.name', price: 'Q25', descriptionKey: 'bebidas.calientes.chocolate_con_agua.description' },
+          { nameKey: 'bebidas.calientes.chocolate_con_leche.name', price: 'Q30', descriptionKey: 'bebidas.calientes.chocolate_con_leche.description' },
+          { nameKey: 'bebidas.calientes.te_e_infusiones.name', price: 'Q15', descriptionKey: 'bebidas.calientes.te_e_infusiones.description' },
         ],
       },
       {
-        subtitle: 'Moctels',
+        subtitleKey: 'bebidas.moctels.subtitle',
         dishes: [
-          {
-            name: 'Ginger Fresh',
-            price: 'Q35',
-            description: 'Syrup de jengibre, limón, jugo de piña y soda.',
-          },
-          {
-            name: 'Atardecer',
-            price: 'Q35',
-            description: 'Cold brew, jugo de naranja y ginger ale.',
-          },
-          {
-            name: 'Piña colada virgen',
-            price: 'Q40',
-            description: 'Jugo de piña, crema de coco y toque de leche.',
-          },
-          {
-            name: 'Mojito de fresa',
-            price: 'Q40',
-            description: 'Syrup de fresa, jugo de limón, hierbabuena y soda.',
-          },
-          {
-            name: 'Sangría Tinta',
-            price: 'Q40',
-            description: 'Sour mix, soda y vino tinto.',
-          },
+          { nameKey: 'bebidas.moctels.ginger_fresh.name', price: 'Q35', descriptionKey: 'bebidas.moctels.ginger_fresh.description' },
+          { nameKey: 'bebidas.moctels.atardecer.name', price: 'Q35', descriptionKey: 'bebidas.moctels.atardecer.description' },
+          { nameKey: 'bebidas.moctels.pina_colada_virgen.name', price: 'Q40', descriptionKey: 'bebidas.moctels.pina_colada_virgen.description' },
+          { nameKey: 'bebidas.moctels.mojito_de_fresa.name', price: 'Q40', descriptionKey: 'bebidas.moctels.mojito_de_fresa.description' },
+          { nameKey: 'bebidas.moctels.sangria_tinta.name', price: 'Q40', descriptionKey: 'bebidas.moctels.sangria_tinta.description' },
         ],
       },
       {
-        subtitle: 'Vinos y Espumosos',
+        subtitleKey: 'bebidas.vinos_y_espumosos.subtitle',
         dishes: [
-          {
-            name: 'Casillero del Diablo Cabernet Sauvignon',
-            price: 'Q240',
-            description: 'Aromas a cereza y grosella negra con toque de vainilla. Para carnes rojas asadas y quesos maduros.',
-          },
-          {
-            name: 'Casillero del Diablo Merlot',
-            price: 'Q240',
-            description: 'Cereza y guinda con toques de toffee y vainilla. Para quesos suaves, pastas, risottos y carnes ligeras.',
-          },
-          {
-            name: 'Casillero del Diablo Rosé',
-            price: 'Q240',
-            description: 'Balance entre acidez, mineralidad y delicadeza. Para aperitivos, quesos y frutos secos.',
-          },
-          {
-            name: 'Casillero del Diablo Sauvignon Blanc',
-            price: 'Q240',
-            description: 'Notas a lima, durazno y toques herbales. Para ceviches, mariscos frescos y ensaladas.',
-          },
-          {
-            name: 'Moscato Fili',
-            price: 'Q190',
-            description: 'Vino dulce y aromático. Para postres, frutas frescas y quesos azules.',
-          },
-          {
-            name: 'Fragolino Bianco',
-            price: 'Q190',
-            description: 'Semiespumoso a base de vino. Para repostería y ensaladas de frutas.',
-          },
-          {
-            name: 'Fragolino Rosso',
-            price: 'Q190',
-            description: 'Semiespumoso a base de vino. Para pastas y pizza.',
-          },
-          {
-            name: 'Frontera Merlot',
-            price: 'Q175',
-            description: 'Cereza, pimientos y toque a cacao. Para pastas, quesos, carnes rojas y pollo a la parrilla.',
-          },
-          {
-            name: 'Frontera Carménère',
-            price: 'Q175',
-            description: 'Suavidad y equilibrio en boca. Para pastas, quesos, pollo a la parrilla y risottos.',
-          },
-          {
-            name: 'Frontera Spritzer Rosé Roses',
-            price: 'Q175',
-            description: 'Aroma a pétalos de rosas. Aperitivo o con postres.',
-          },
-          {
-            name: 'Frontera Spritzer Elderflower',
-            price: 'Q175',
-            description: 'Vino blanco y flor de saúco. Para comidas ligeras y aperitivos.',
-          },
+          { nameKey: 'bebidas.vinos_y_espumosos.casillero_cabernet.name', price: 'Q240', descriptionKey: 'bebidas.vinos_y_espumosos.casillero_cabernet.description' },
+          { nameKey: 'bebidas.vinos_y_espumosos.casillero_merlot.name', price: 'Q240', descriptionKey: 'bebidas.vinos_y_espumosos.casillero_merlot.description' },
+          { nameKey: 'bebidas.vinos_y_espumosos.casillero_rose.name', price: 'Q240', descriptionKey: 'bebidas.vinos_y_espumosos.casillero_rose.description' },
+          { nameKey: 'bebidas.vinos_y_espumosos.casillero_sauvignon.name', price: 'Q240', descriptionKey: 'bebidas.vinos_y_espumosos.casillero_sauvignon.description' },
+          { nameKey: 'bebidas.vinos_y_espumosos.moscato_fili.name', price: 'Q190', descriptionKey: 'bebidas.vinos_y_espumosos.moscato_fili.description' },
+          { nameKey: 'bebidas.vinos_y_espumosos.fragolino_bianco.name', price: 'Q190', descriptionKey: 'bebidas.vinos_y_espumosos.fragolino_bianco.description' },
+          { nameKey: 'bebidas.vinos_y_espumosos.fragolino_rosso.name', price: 'Q190', descriptionKey: 'bebidas.vinos_y_espumosos.fragolino_rosso.description' },
+          { nameKey: 'bebidas.vinos_y_espumosos.frontera_merlot.name', price: 'Q175', descriptionKey: 'bebidas.vinos_y_espumosos.frontera_merlot.description' },
+          { nameKey: 'bebidas.vinos_y_espumosos.frontera_carmenere.name', price: 'Q175', descriptionKey: 'bebidas.vinos_y_espumosos.frontera_carmenere.description' },
+          { nameKey: 'bebidas.vinos_y_espumosos.frontera_spritzer_rose.name', price: 'Q175', descriptionKey: 'bebidas.vinos_y_espumosos.frontera_spritzer_rose.description' },
+          { nameKey: 'bebidas.vinos_y_espumosos.frontera_spritzer_elderflower.name', price: 'Q175', descriptionKey: 'bebidas.vinos_y_espumosos.frontera_spritzer_elderflower.description' },
         ],
       },
       {
-        subtitle: 'Naturales',
+        subtitleKey: 'bebidas.naturales.subtitle',
         dishes: [
-          { name: 'Jamaica', price: 'Q30', description: '', note: 'Pichel Q100' },
-          { name: 'Guanábana', price: 'Q30', description: '', note: 'Pichel Q100' },
-          { name: 'Horchata', price: 'Q30', description: '', note: 'Pichel Q100' },
-          { name: 'Naranjada con agua', price: 'Q30', description: '', note: 'Pichel Q100' },
-          { name: 'Naranjada con soda', price: 'Q35', description: '', note: 'Pichel Q110' },
-          { name: 'Naranjada con pepitoria', price: 'Q35', description: '' },
-          { name: 'Limonada con agua', price: 'Q30', description: '', note: 'Pichel Q100' },
-          { name: 'Limonada con soda', price: 'Q35', description: '', note: 'Pichel Q110' },
-          { name: 'Jugo de naranja', price: 'Q40', description: '' },
+          { nameKey: 'bebidas.naturales.jamaica.name', price: 'Q30', descriptionKey: 'bebidas.naturales.jamaica.description', noteKey: 'bebidas.naturales.jamaica.note' },
+          { nameKey: 'bebidas.naturales.guanabana.name', price: 'Q30', descriptionKey: 'bebidas.naturales.guanabana.description', noteKey: 'bebidas.naturales.guanabana.note' },
+          { nameKey: 'bebidas.naturales.horchata.name', price: 'Q30', descriptionKey: 'bebidas.naturales.horchata.description', noteKey: 'bebidas.naturales.horchata.note' },
+          { nameKey: 'bebidas.naturales.naranjada_con_agua.name', price: 'Q30', descriptionKey: 'bebidas.naturales.naranjada_con_agua.description', noteKey: 'bebidas.naturales.naranjada_con_agua.note' },
+          { nameKey: 'bebidas.naturales.naranjada_con_soda.name', price: 'Q35', descriptionKey: 'bebidas.naturales.naranjada_con_soda.description', noteKey: 'bebidas.naturales.naranjada_con_soda.note' },
+          { nameKey: 'bebidas.naturales.naranjada_con_pepitoria.name', price: 'Q35', descriptionKey: 'bebidas.naturales.naranjada_con_pepitoria.description' },
+          { nameKey: 'bebidas.naturales.limonada_con_agua.name', price: 'Q30', descriptionKey: 'bebidas.naturales.limonada_con_agua.description', noteKey: 'bebidas.naturales.limonada_con_agua.note' },
+          { nameKey: 'bebidas.naturales.limonada_con_soda.name', price: 'Q35', descriptionKey: 'bebidas.naturales.limonada_con_soda.description', noteKey: 'bebidas.naturales.limonada_con_soda.note' },
+          { nameKey: 'bebidas.naturales.jugo_de_naranja.name', price: 'Q40', descriptionKey: 'bebidas.naturales.jugo_de_naranja.description' },
         ],
       },
       {
-        subtitle: 'Frías',
+        subtitleKey: 'bebidas.frias.subtitle',
         dishes: [
-          { name: 'Coca Cola', price: 'Q15', description: '' },
-          { name: 'Coca Cola sabores', price: 'Q15', description: 'Fanta naranja, Sprite, Toronja, Coca Zero.' },
-          { name: 'Pepsi', price: 'Q15', description: '' },
-          { name: 'Pepsi sabores', price: 'Q15', description: 'Mineral, Grapete.' },
-          { name: 'Agua pura en botella', price: 'Q12', description: '' },
-          { name: 'Cimarrona', price: 'Q20', description: '' },
-          { name: 'V8 preparado', price: 'Q25', description: '' },
-          { name: 'Fruit Punch', price: 'Q30', description: 'Jugo de piña, limón, naranja y granadina.' },
+          { nameKey: 'bebidas.frias.coca_cola.name', price: 'Q15', descriptionKey: 'bebidas.frias.coca_cola.description' },
+          { nameKey: 'bebidas.frias.coca_cola_sabores.name', price: 'Q15', descriptionKey: 'bebidas.frias.coca_cola_sabores.description' },
+          { nameKey: 'bebidas.frias.pepsi.name', price: 'Q15', descriptionKey: 'bebidas.frias.pepsi.description' },
+          { nameKey: 'bebidas.frias.pepsi_sabores.name', price: 'Q15', descriptionKey: 'bebidas.frias.pepsi_sabores.description' },
+          { nameKey: 'bebidas.frias.agua_pura.name', price: 'Q12', descriptionKey: 'bebidas.frias.agua_pura.description' },
+          { nameKey: 'bebidas.frias.cimarrona.name', price: 'Q20', descriptionKey: 'bebidas.frias.cimarrona.description' },
+          { nameKey: 'bebidas.frias.v8_preparado.name', price: 'Q25', descriptionKey: 'bebidas.frias.v8_preparado.description' },
+          { nameKey: 'bebidas.frias.fruit_punch.name', price: 'Q30', descriptionKey: 'bebidas.frias.fruit_punch.description' },
         ],
       },
       {
-        subtitle: 'Frappés',
+        subtitleKey: 'bebidas.frappe.subtitle',
         dishes: [
-          {
-            name: 'Frappuchino',
-            price: 'Q35',
-            description: 'Café, leche, helado de vainilla, crema batida y topping de chocolate.',
-          },
-          {
-            name: 'Frappé Oreo',
-            price: 'Q35',
-            description: 'Café, leche, galleta Oreo, syrup de chocolate y crema batida.',
-          },
-          {
-            name: 'Frappé de caramelo con maní',
-            price: 'Q35',
-            description: 'Café, leche, syrup de caramelo, maní y crema batida.',
-          },
+          { nameKey: 'bebidas.frappe.frappuchino.name', price: 'Q35', descriptionKey: 'bebidas.frappe.frappuchino.description' },
+          { nameKey: 'bebidas.frappe.frappe_oreo.name', price: 'Q35', descriptionKey: 'bebidas.frappe.frappe_oreo.description' },
+          { nameKey: 'bebidas.frappe.frappe_de_caramelo_con_mani.name', price: 'Q35', descriptionKey: 'bebidas.frappe.frappe_de_caramelo_con_mani.description' },
         ],
       },
       {
-        subtitle: 'Licuados',
+        subtitleKey: 'bebidas.licuados.subtitle',
         dishes: [
-          {
-            name: 'Licuado de fruta',
-            price: 'Q20',
-            description: 'Banano, fresa, papaya o sandía.',
-            note: 'Leche entera o deslactosada',
-          },
-          {
-            name: 'Licuado Fresa-banano',
-            price: 'Q25',
-            description: '',
-            note: 'Leche entera o deslactosada',
-          },
-          {
-            name: 'Tres Amores',
-            price: 'Q30',
-            description: 'Mora, fresa y jugo de naranja.',
-            note: 'Leche entera o deslactosada',
-          },
-          {
-            name: 'Chocomilk',
-            price: 'Q25',
-            description: '',
-            note: 'Leche entera o deslactosada',
-          },
+          { nameKey: 'bebidas.licuados.licuado_de_fruta.name', price: 'Q20', descriptionKey: 'bebidas.licuados.licuado_de_fruta.description', noteKey: 'bebidas.licuados.licuado_de_fruta.note' },
+          { nameKey: 'bebidas.licuados.licuado_fresa_banano.name', price: 'Q25', descriptionKey: 'bebidas.licuados.licuado_fresa_banano.description', noteKey: 'bebidas.licuados.licuado_fresa_banano.note' },
+          { nameKey: 'bebidas.licuados.tres_amores.name', price: 'Q30', descriptionKey: 'bebidas.licuados.tres_amores.description', noteKey: 'bebidas.licuados.tres_amores.note' },
+          { nameKey: 'bebidas.licuados.chocomilk.name', price: 'Q25', descriptionKey: 'bebidas.licuados.chocomilk.description', noteKey: 'bebidas.licuados.chocomilk.note' },
         ],
       },
     ],
   },
   {
     number: '12',
-    title: 'BUFFET',
+    titleKey: 'buffet.title',
+    type: 'buffet',
     dishes: [
       {
-        name: 'Buffet dominical',
-        description: 'Todos los domingos, 7:00 am a 11:00 am. Precio y contenido por confirmar por WhatsApp.',
+        nameKey: 'buffet.buffet_dominical.name',
+        descriptionKey: 'buffet.buffet_dominical.description',
       },
     ],
   },
+]
+
+/* ─── Services Data (translation keys) ─── */
+
+interface ServiceData {
+  titleKey: string
+  descriptionKey: string
+  timeKey: string
+}
+
+const servicesData: ServiceData[] = [
+  { titleKey: 'buffet_dominical.title', descriptionKey: 'buffet_dominical.description', timeKey: 'buffet_dominical.time' },
+  { titleKey: 'desayunos.title', descriptionKey: 'desayunos.description', timeKey: 'desayunos.time' },
+  { titleKey: 'almuerzo.title', descriptionKey: 'almuerzo.description', timeKey: 'almuerzo.time' },
+  { titleKey: 'cena.title', descriptionKey: 'cena.description', timeKey: 'cena.time' },
+]
+
+interface SpecialServiceData {
+  titleKey: string
+  descriptionKey: string
+}
+
+const specialServicesData: SpecialServiceData[] = [
+  { titleKey: 'special.eventos.title', descriptionKey: 'special.eventos.description' },
+  { titleKey: 'special.mesas_romanticas.title', descriptionKey: 'special.mesas_romanticas.description' },
+  { titleKey: 'special.delivery.title', descriptionKey: 'special.delivery.description' },
 ]
 
 /* ─── Intersection Observer Hook ─── */
@@ -723,7 +650,13 @@ function SubSectionHeader({ subtitle }: { subtitle: string }) {
   )
 }
 
-function DishRow({ dish, compact = false }: { dish: Dish; compact?: boolean }) {
+function DishRow({ name, price, description, note, compact = false }: {
+  name: string
+  price?: string
+  description: string
+  note?: string
+  compact?: boolean
+}) {
   return (
     <article className={`animate-on-scroll ${compact ? 'py-3' : 'py-5'}`}>
       <div className="flex items-baseline justify-between gap-4">
@@ -731,72 +664,74 @@ function DishRow({ dish, compact = false }: { dish: Dish; compact?: boolean }) {
           className={`font-display leading-snug ${compact ? 'text-sm' : 'text-base'} font-400`}
           style={{ color: 'var(--body)' }}
         >
-          {dish.name}
+          {name}
         </h3>
-        {dish.price && (
+        {price && (
           <span
             className="font-mono tabular-nums shrink-0 text-sm"
             style={{ color: 'var(--gold)' }}
           >
-            {dish.price}
+            {price}
           </span>
         )}
       </div>
-      {dish.description && (
+      {description && (
         <p
           className={`mt-1.5 leading-relaxed ${compact ? 'text-xs' : 'text-sm'}`}
           style={{ color: 'var(--body-75)' }}
         >
-          {dish.description}
+          {description}
         </p>
       )}
-      {dish.note && (
+      {note && (
         <p
           className="mt-1 text-xs italic"
           style={{ color: 'var(--gold-muted)' }}
         >
-          {dish.note}
+          {note}
         </p>
       )}
     </article>
   )
 }
 
-function GuarnicionRow({ dish }: { dish: Dish }) {
+function GuarnicionRow({ name, price }: { name: string; price?: string }) {
   return (
     <div className="animate-on-scroll flex items-baseline justify-between gap-3 py-2">
       <span
         className="font-display text-sm font-400"
         style={{ color: 'var(--body)' }}
       >
-        {dish.name}
+        {name}
       </span>
-      {dish.price && (
+      {price && (
         <span
           className="font-mono tabular-nums shrink-0 text-xs"
           style={{ color: 'var(--gold)' }}
         >
-          {dish.price}
+          {price}
         </span>
       )}
     </div>
   )
 }
 
-function BuffetBanner({ dish }: { dish: Dish }) {
+function BuffetBanner({ name, description }: { name: string; description: string }) {
+  const { t } = useTranslation('ui')
+
   return (
     <div className="animate-on-scroll mx-auto max-w-xl rounded-sm border border-[var(--gold-dim)] bg-[var(--bg-elevated)] p-6 text-center">
       <p
         className="font-display text-base font-400 tracking-wide"
         style={{ color: 'var(--cream)' }}
       >
-        {dish.name}
+        {name}
       </p>
       <p
         className="mt-3 text-sm leading-relaxed"
         style={{ color: 'var(--body-75)' }}
       >
-        {dish.description}
+        {description}
       </p>
       <a
         href="https://wa.me/50237590104"
@@ -805,33 +740,50 @@ function BuffetBanner({ dish }: { dish: Dish }) {
         className="mt-4 inline-block text-sm transition-opacity hover:opacity-80"
         style={{ color: 'var(--gold)' }}
       >
-        Consultar por WhatsApp →
+        {t('footer.whatsapp_cta')}
       </a>
     </div>
   )
 }
 
-function MenuSection({ section }: { section: MenuSection }) {
-  const isGuarniciones = section.title === 'GUARNICIONES'
-  const isBuffet = section.title === 'BUFFET'
+function MenuSectionComponent({ section }: { section: MenuSection }) {
+  const { t } = useTranslation('menu')
+
+  const title = t(section.titleKey)
+  const isGuarniciones = section.type === 'guarniciones'
+  const isBuffet = section.type === 'buffet'
 
   return (
     <section className="px-6 py-10 sm:px-10 md:px-16">
-      <SectionHeader number={section.number} title={section.title} />
+      <SectionHeader number={section.number} title={title} />
       <div className="mx-auto max-w-xl">
         {/* Simple dishes (no subsections) */}
         {section.dishes && !section.subsections && (
           <>
             {isBuffet
               ? section.dishes.map((dish) => (
-                  <BuffetBanner key={dish.name} dish={dish} />
+                  <BuffetBanner
+                    key={dish.nameKey}
+                    name={t(dish.nameKey)}
+                    description={t(dish.descriptionKey)}
+                  />
                 ))
               : isGuarniciones
                 ? section.dishes.map((dish) => (
-                    <GuarnicionRow key={dish.name} dish={dish} />
+                    <GuarnicionRow
+                      key={dish.nameKey}
+                      name={t(dish.nameKey)}
+                      price={dish.price}
+                    />
                   ))
                 : section.dishes.map((dish) => (
-                    <DishRow key={dish.name} dish={dish} />
+                    <DishRow
+                      key={dish.nameKey}
+                      name={t(dish.nameKey)}
+                      price={dish.price}
+                      description={t(dish.descriptionKey)}
+                      note={dish.noteKey ? t(dish.noteKey) : undefined}
+                    />
                   ))}
           </>
         )}
@@ -840,17 +792,29 @@ function MenuSection({ section }: { section: MenuSection }) {
         {section.dishes && section.subsections && (
           <>
             {section.dishes.map((dish) => (
-              <DishRow key={dish.name} dish={dish} />
+              <DishRow
+                key={dish.nameKey}
+                name={t(dish.nameKey)}
+                price={dish.price}
+                description={t(dish.descriptionKey)}
+                note={dish.noteKey ? t(dish.noteKey) : undefined}
+              />
             ))}
           </>
         )}
 
         {/* Subsections */}
         {section.subsections?.map((sub) => (
-          <div key={sub.subtitle}>
-            <SubSectionHeader subtitle={sub.subtitle} />
+          <div key={sub.subtitleKey}>
+            <SubSectionHeader subtitle={t(sub.subtitleKey)} />
             {sub.dishes.map((dish) => (
-              <DishRow key={dish.name} dish={dish} />
+              <DishRow
+                key={dish.nameKey}
+                name={t(dish.nameKey)}
+                price={dish.price}
+                description={t(dish.descriptionKey)}
+                note={dish.noteKey ? t(dish.noteKey) : undefined}
+              />
             ))}
           </div>
         ))}
@@ -861,36 +825,9 @@ function MenuSection({ section }: { section: MenuSection }) {
 
 /* ─── Services ─── */
 
-interface Service {
-  title: string
-  description: string
-  time?: string
-}
-
-const services: Service[] = [
-  {
-    title: 'Buffet dominical',
-    description: 'Todos los domingos',
-    time: '7:00 am a 11:00 am',
-  },
-  {
-    title: 'Desayunos',
-    description: 'Todos los días',
-    time: '7:00 am a 11:00 am',
-  },
-  {
-    title: 'Almuerzo',
-    description: 'Todos los días',
-    time: '11:00 am a 3:00 pm',
-  },
-  {
-    title: 'Cena',
-    description: 'Todos los días',
-    time: '7:00 pm a 10:00 pm',
-  },
-]
-
 function ServicesSection() {
+  const { t } = useTranslation('services')
+
   return (
     <section className="px-6 py-12 sm:px-10 md:px-16">
       <div className="animate-on-scroll mb-10 text-center">
@@ -898,41 +835,39 @@ function ServicesSection() {
           className="font-mono text-xs tracking-[0.3em] uppercase"
           style={{ color: 'var(--gold-muted)' }}
         >
-          Servicios
+          {t('section_label')}
         </span>
         <h2
           className="font-display mt-3 text-lg font-400 tracking-[0.2em] uppercase"
           style={{ color: 'var(--cream)' }}
         >
-          HORARIOS Y ATENCIÓN
+          {t('section_title')}
         </h2>
       </div>
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2">
-        {services.map((service) => (
+        {servicesData.map((service) => (
           <div
-            key={service.title}
+            key={service.titleKey}
             className="animate-on-scroll rounded-sm border border-[var(--gold-dim)] bg-[var(--bg-elevated)] p-5 text-center"
           >
             <h3
               className="font-display text-sm font-400 tracking-wide"
               style={{ color: 'var(--cream)' }}
             >
-              {service.title}
+              {t(service.titleKey)}
             </h3>
             <p
               className="mt-2 text-xs"
               style={{ color: 'var(--body-75)' }}
             >
-              {service.description}
+              {t(service.descriptionKey)}
             </p>
-            {service.time && (
-              <p
-                className="font-mono mt-1 text-[11px] tracking-wide"
-                style={{ color: 'var(--gold-muted)' }}
-              >
-                {service.time}
-              </p>
-            )}
+            <p
+              className="font-mono mt-1 text-[11px] tracking-wide"
+              style={{ color: 'var(--gold-muted)' }}
+            >
+              {t(service.timeKey)}
+            </p>
           </div>
         ))}
       </div>
@@ -942,24 +877,9 @@ function ServicesSection() {
 
 /* ─── Special Services ─── */
 
-const specialServices = [
-  {
-    title: 'Eventos',
-    description:
-      'Salón propio para cumpleaños, baby showers, aniversarios, comidas de grupo y eventos corporativos. Montaje, menú y espacio se coordinan por WhatsApp.',
-  },
-  {
-    title: 'Mesas románticas',
-    description:
-      'Cenas de pareja, aniversarios, ocasiones especiales. Decoración personalizada y menú especial por WhatsApp.',
-  },
-  {
-    title: 'Delivery',
-    description: 'Pedidos por WhatsApp.',
-  },
-]
-
 function SpecialServicesSection() {
+  const { t } = useTranslation('services')
+
   return (
     <section className="px-6 py-12 sm:px-10 md:px-16">
       <div className="animate-on-scroll mb-10 text-center">
@@ -967,29 +887,29 @@ function SpecialServicesSection() {
           className="font-mono text-xs tracking-[0.3em] uppercase"
           style={{ color: 'var(--gold-muted)' }}
         >
-          Especiales
+          {t('special.section_label')}
         </span>
         <h2
           className="font-display mt-3 text-lg font-400 tracking-[0.2em] uppercase"
           style={{ color: 'var(--cream)' }}
         >
-          SERVICIOS ADICIONALES
+          {t('special.section_title')}
         </h2>
       </div>
       <div className="mx-auto max-w-2xl space-y-6">
-        {specialServices.map((service) => (
-          <div key={service.title} className="animate-on-scroll">
+        {specialServicesData.map((service) => (
+          <div key={service.titleKey} className="animate-on-scroll">
             <h3
               className="font-display text-sm font-400 tracking-wide"
               style={{ color: 'var(--cream)' }}
             >
-              {service.title}
+              {t(service.titleKey)}
             </h3>
             <p
               className="mt-2 text-sm leading-relaxed"
               style={{ color: 'var(--body-75)' }}
             >
-              {service.description}
+              {t(service.descriptionKey)}
             </p>
           </div>
         ))}
@@ -1002,10 +922,29 @@ function SpecialServicesSection() {
 
 function App() {
   const containerRef = useScrollReveal()
+  const { t, i18n } = useTranslation()
+
+  // Sync HTML lang attribute, document title, and meta description
+  useEffect(() => {
+    document.documentElement.lang = i18n.language
+  }, [i18n.language])
+
+  useEffect(() => {
+    document.title = t('meta:title')
+  }, [t, i18n.language])
+
+  useEffect(() => {
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc) {
+      metaDesc.setAttribute('content', t('meta:description'))
+    }
+  }, [t, i18n.language])
 
   return (
     <div ref={containerRef} className="mx-auto max-w-2xl">
       <Intro />
+      <LanguageSwitcher />
+
       {/* ─── Hero ─── */}
       <header className="flex flex-col items-center justify-center px-6 pt-20 pb-16 text-center sm:pt-28 sm:pb-20">
         <div className="animate-on-scroll">
@@ -1013,7 +952,7 @@ function App() {
             className="font-mono mb-4 text-[10px] tracking-[0.4em] uppercase"
             style={{ color: 'var(--gold-muted)' }}
           >
-            Hotel & Restaurante
+            {t('ui:hotel_label')}
           </p>
           <h1
             className="font-display text-6xl font-300 tracking-wide sm:text-7xl md:text-8xl"
@@ -1029,13 +968,13 @@ function App() {
             className="font-display mt-4 text-sm tracking-[0.35em] uppercase font-300"
             style={{ color: 'var(--gold)' }}
           >
-            Aroma y Sabor
+            {t('ui:aroma_y_sabor')}
           </p>
           <p
             className="font-body mt-6 text-xs tracking-wide"
             style={{ color: 'var(--body-50)' }}
           >
-            Retalhuleu, Guatemala
+            {t('ui:location')}
           </p>
         </div>
       </header>
@@ -1050,7 +989,7 @@ function App() {
               className="font-display text-lg leading-relaxed italic font-300 sm:text-xl"
               style={{ color: 'var(--cream)' }}
             >
-              Aquí se celebra.
+              {t('ui:intro_quote')}
             </p>
           </blockquote>
           <div
@@ -1061,7 +1000,7 @@ function App() {
             className="text-sm leading-relaxed"
             style={{ color: 'var(--body-75)' }}
           >
-            En Etrog Hotel y Restaurante te hacemos sentir como en casa. Descansa en nuestras cómodas habitaciones y disfruta de la mejor comida guatemalteca en un ambiente familiar y lleno de sabor
+            {t('ui:intro_text')}
           </p>
         </div>
       </section>
@@ -1071,7 +1010,7 @@ function App() {
       {/* ─── Menu Sections ─── */}
       {menuSections.map((section, i) => (
         <div key={section.number}>
-          <MenuSection section={section} />
+          <MenuSectionComponent section={section} />
           {i < menuSections.length - 1 && <GoldDivider />}
         </div>
       ))}
@@ -1095,13 +1034,13 @@ function App() {
             className="font-display text-2xl font-300 tracking-wide"
             style={{ color: 'var(--cream)' }}
           >
-            ETROG · AROMA Y SABOR
+            {t('ui:footer.tagline')}
           </p>
           <p
             className="mt-3 text-sm"
             style={{ color: 'var(--body-75)' }}
           >
-            Centro de Retalhuleu, Guatemala
+            {t('ui:footer.location')}
           </p>
           <a
             href="https://wa.me/50237590104"
@@ -1131,31 +1070,31 @@ function App() {
               className="font-mono mb-3 text-[10px] tracking-[0.25em] uppercase"
               style={{ color: 'var(--body-50)' }}
             >
-              Rango de precios
+              {t('ui:footer.price_range_label')}
             </p>
             <p
               className="font-body text-xs"
               style={{ color: 'var(--body-75)' }}
             >
-              Desayunos: Q40 – Q70
+              {t('ui:footer.price_breakfast')}
             </p>
             <p
               className="font-body mt-1 text-xs"
               style={{ color: 'var(--body-75)' }}
             >
-              Platos fuertes: Q70 – Q200
+              {t('ui:footer.price_main')}
             </p>
             <p
               className="font-body mt-1 text-xs"
               style={{ color: 'var(--body-75)' }}
             >
-              Parrillada grupal: Q300 – Q550
+              {t('ui:footer.price_grill')}
             </p>
             <p
               className="font-body mt-1 text-xs"
               style={{ color: 'var(--body-75)' }}
             >
-              Bebidas: Q12 – Q240
+              {t('ui:footer.price_drinks')}
             </p>
           </div>
 
@@ -1163,7 +1102,7 @@ function App() {
             className="font-body mt-8 text-[11px] italic"
             style={{ color: 'var(--body-30)' }}
           >
-            Cocina guatemalteca con orgullo de lo local
+            {t('ui:footer.pride')}
           </p>
         </div>
       </footer>
