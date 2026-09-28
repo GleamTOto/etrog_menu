@@ -954,11 +954,6 @@ const specialServices = [
       'Cenas de pareja, aniversarios, ocasiones especiales. Decoración personalizada y menú especial por WhatsApp.',
   },
   {
-    title: 'Niño abanderado',
-    description:
-      'Postre y bebida de cortesía para el niño abanderado, escolta o alumno distinguido (presentando constancia del colegio).',
-  },
-  {
     title: 'Delivery',
     description: 'Pedidos por WhatsApp.',
   },
