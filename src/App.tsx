@@ -125,11 +125,6 @@ const menuSections: MenuSection[] = [
         descriptionKey: 'entradas.nachos_con_carne_y_queso.description',
       },
       {
-        nameKey: 'entradas.sopa_de_tortilla.name',
-        price: 'Q45',
-        descriptionKey: 'entradas.sopa_de_tortilla.description',
-      },
-      {
         nameKey: 'entradas.alitas.name',
         price: 'Q55',
         descriptionKey: 'entradas.alitas.description',
@@ -565,7 +560,6 @@ const servicesData: ServiceData[] = [
   { titleKey: 'buffet_dominical.title', descriptionKey: 'buffet_dominical.description', timeKey: 'buffet_dominical.time' },
   { titleKey: 'desayunos.title', descriptionKey: 'desayunos.description', timeKey: 'desayunos.time' },
   { titleKey: 'almuerzo.title', descriptionKey: 'almuerzo.description', timeKey: 'almuerzo.time' },
-  { titleKey: 'cena.title', descriptionKey: 'cena.description', timeKey: 'cena.time' },
 ]
 
 interface SpecialServiceData {

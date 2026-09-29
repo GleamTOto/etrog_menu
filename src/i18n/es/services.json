@@ -12,12 +12,7 @@
   "almuerzo": {
     "title": "Almuerzo",
     "description": "Todos los días",
-    "time": "11:00 am a 3:00 pm"
-  },
-  "cena": {
-    "title": "Cena",
-    "description": "Todos los días",
-    "time": "7:00 pm a 10:00 pm"
+    "time": "11:00 am a 10:00 pm"
   },
   "section_label": "Servicios",
   "section_title": "HORARIOS Y ATENCIÓN",

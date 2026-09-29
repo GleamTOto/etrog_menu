@@ -12,12 +12,7 @@
   "almuerzo": {
     "title": "Lunch",
     "description": "Every day",
-    "time": "11:00 am to 3:00 pm"
-  },
-  "cena": {
-    "title": "Dinner",
-    "description": "Every day",
-    "time": "7:00 pm to 10:00 pm"
+    "time": "11:00 am to 10:00 pm"
   },
   "section_label": "Services",
   "section_title": "HOURS & SERVICE",
