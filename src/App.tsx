@@ -940,34 +940,8 @@ function App() {
       <LanguageSwitcher />
 
       {/* ─── Hero ─── */}
-      <header className="relative flex flex-col items-center justify-center px-6 pt-20 pb-16 text-center sm:pt-28 sm:pb-20 overflow-hidden">
-        {/* Watermark pattern */}
-        <div 
-          className="absolute inset-0 pointer-events-none"
-          style={{ opacity: 0.2 }}
-        >
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="lemon-pattern" x="0" y="0" width="120" height="136" patternUnits="userSpaceOnUse">
-                <g transform="translate(30, 34) scale(0.5)">
-                  <circle cx="30" cy="29" r="25" fill="#EFC12B" opacity="0.3"/>
-                  <circle cx="30" cy="29" r="19" stroke="#EFC12B" strokeWidth="1.2" opacity="0.2"/>
-                  <line x1="30" y1="29" x2="30" y2="10" stroke="#EFC12B" strokeWidth="0.9" opacity="0.2"/>
-                  <line x1="30" y1="29" x2="46.5" y2="19.5" stroke="#EFC12B" strokeWidth="0.9" opacity="0.2"/>
-                  <line x1="30" y1="29" x2="46.5" y2="38.5" stroke="#EFC12B" strokeWidth="0.9" opacity="0.2"/>
-                  <line x1="30" y1="29" x2="30" y2="48" stroke="#EFC12B" strokeWidth="0.9" opacity="0.2"/>
-                  <line x1="30" y1="29" x2="13.5" y2="38.5" stroke="#EFC12B" strokeWidth="0.9" opacity="0.2"/>
-                  <line x1="30" y1="29" x2="13.5" y2="19.5" stroke="#EFC12B" strokeWidth="0.9" opacity="0.2"/>
-                  <circle cx="30" cy="29" r="2.8" fill="#EFC12B" opacity="0.2"/>
-                  <path d="M30 54 C28.4 57.3 27.8 62 30 64.3 C32.2 62 31.6 57.3 30 54Z" fill="#EFC12B" opacity="0.3"/>
-                </g>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#lemon-pattern)"/>
-          </svg>
-        </div>
-        
-        <div className="animate-on-scroll relative z-10">
+      <header className="flex flex-col items-center justify-center px-6 pt-20 pb-16 text-center sm:pt-28 sm:pb-20">
+        <div className="animate-on-scroll">
           <p
             className="font-mono mb-4 text-[10px] tracking-[0.4em] uppercase"
             style={{ color: 'var(--gold-muted)' }}
